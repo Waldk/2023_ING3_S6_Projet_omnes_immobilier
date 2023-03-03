@@ -112,9 +112,7 @@
                     </tbody>
                 </table>
             </div>
-            
-        </section>
-        <div id="chat-container">
+            <div id="chat-container">
                 <div id="chat-header">
                     <h2>Chat avec le client</h2>
                     <button id="close-chat-btn">X</button>
@@ -125,6 +123,8 @@
                     <button id="send-message-btn">Envoyer</button>
                 </div>
         </div>
+        </section>
+        
 
         <?php
         include("scripts/footer.php");
