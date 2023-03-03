@@ -33,98 +33,15 @@
         <section>
             <!--
             <?php
-                include("scripts/compte_client.php");
+            include("scripts/compte_client.php");
             ?> -->
-        <div class="user-rdv">
-                <h2>Rendez-vous à venir</h2>
-                <table id="consultation">
-                    <thead>
-                        <tr>
-                            <th>Date/Heure</th>
-                            <th>Agent immobilier</th>
-                            <th>Biens</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>01/02/2022 14:30</td>
-                            <td>Dio Brando</td>
-                            <td>34 quai de grenelle, 75015 Paris(un lien vers le bien)</td>
-                            <td colspan="2" align="center">
-                                <form method="post" action="">
-                                    <input type="hidden" name="champ-caché" value="1">
-                                    <input class="bouton_rdv" type="submit" name="submit" value="Annuler ce RDV">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>10/03/2022 10:15</td>
-                            <td>Jane Smith</td>
-                            <td>34 quai de grenelle, 75015 Paris</td>
-                            <td colspan="2" align="center">
-                                <form method="post" action="">
-                                    <input type="hidden" name="champ-caché" value="1">
-                                    <input class="bouton_rdv" type="submit" name="submit" value="Annuler ce RDV">
-                            </td>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>20/04/2022 16:45</td>
-                            <td>Tep Penneçot</td>
-                            <td>34 quai de grenelle, 75015 Paris</td>
-                            <td colspan="2" align="center">
-                                <form method="post" action="">
-                                    <input type="hidden" name="champ-caché" value="1">
-                                    <input class="bouton_rdv" type="submit" name="submit" value="Annuler ce RDV">
-                            </td>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="user-consultation">
-                <h2>Historique de consultations immobilières</h2>
-                <table id="consultation">
-                    <thead>
-                        <tr>
-                            <th>Date/Heure</th>
-                            <th>Agent immobilier</th>
-                            <th>Biens</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>01/02/2022 14:30</td>
-                            <td>Dio Brando</td>
-                            <td>34 quai de grenelle, 75015 Paris(un lien vers le bien)</td>
-                        </tr>
-                        <tr>
-                            <td>10/03/2022 10:15</td>
-                            <td>Jane Smith</td>
-                            <td>34 quai de grenelle, 75015 Paris</td>
-                        </tr>
-                        <tr>
-                            <td>20/04/2022 16:45</td>
-                            <td>Tep Penneçot</td>
-                            <td>34 quai de grenelle, 75015 Paris</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div id="chat-container">
-                <div id="chat-header">
-                    <h2>Chat avec le client</h2>
-                    <button id="close-chat-btn">X</button>
-                </div>
-                <div id="chat-messages"></div>
-                <div id="chat-input">
-                    <textarea id="message-input" placeholder="Saisissez votre message"></textarea>
-                    <button id="send-message-btn">Envoyer</button>
-                </div>
-        </div>
+            <!--
+            <?php
+            include("scripts/compte_agent.php");
+            ?> -->
+            
         </section>
-        
+
 
         <?php
         include("scripts/footer.php");
