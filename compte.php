@@ -35,10 +35,10 @@
             <?php
             include("scripts/compte_client.php");
             ?> -->
-            <!--
+    
             <?php
             include("scripts/compte_agent.php");
-            ?> -->
+            ?>
             
         </section>
 
