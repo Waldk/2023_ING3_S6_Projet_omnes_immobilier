@@ -10,62 +10,64 @@ echo'
                 <div class="user-bank">trouver un moyen de cacher une information bancaire</div>
                 <button class="bouton_footer" id="button_modif">Cliquez pour mettre à jour les informations</button>
             </div>
-            <div class="modif-info" style="display : none;">
+            <div class="modif-info" style="display : ;">
                 <h2>Modification d\'informations</h2>
-                <form action="scripts/inscription.php" method="post">
-                    <table border="1">
-                        <tr>
-                            <td>Nom:</td>
-                            <td><input type="text" name="nom"></td>
-                        </tr>
-                        <tr>
-                            <td>Prenom:</td>
-                            <td><input type="text" name="prenom"></td>
-                        </tr>
-                        <tr>
-                            <td>Adresse:</td>
-                            <td><input type="text" name="Adresse_1"></td>
-                        </tr>
-                        <tr>
-                            <td>Complément d\'adresse:</td>
-                            <td><input type="text" name="Adresse_2"></td>
-                        </tr>
-                        <tr>
-                            <td>Ville:</td>
-                            <td><input type="text" name="ville"></td>
-                        </tr>
-                        <tr>
-                            <td>Code Postal:</td>
-                            <td><input type="number" name="codepostal"></td>
-                        </tr>
-                        <tr>
-                            <td>Pays:</td>
-                            <td><input type="text" name="pays"></td>
-                        </tr>
-                        <tr>
-                            <td>telephone:</td>
-                            <td><input type="tel" name="telephone"></td>
-                        </tr>
-                        <tr>
-                            <td>E-mail:</td>
-                            <td><input type="email" name="mail"></td>
-                        </tr>
-                        <tr>
-                            <td>Identifiant:</td>
-                            <td><input type="text" name="identifiant"></td>
-                        </tr>
+                    <div id="container">
+                        <form action="scripts/inscription.php" method="post">
+                            <table border="0">
+                                <tr>
+                                    <td>Nom:</td>
+                                    <td><input type="text" name="nom"></td>
+                                </tr>
+                                <tr>
+                                    <td>Prenom:</td>
+                                    <td><input type="text" name="prenom"></td>
+                                </tr>
+                                <tr>
+                                    <td>Adresse:</td>
+                                    <td><input type="text" name="Adresse_1"></td>
+                                </tr>
+                                <tr>
+                                    <td>Complément d\'adresse:</td>
+                                    <td><input type="text" name="Adresse_2"></td>
+                                </tr>
+                                <tr>
+                                    <td>Ville:</td>
+                                    <td><input type="text" name="ville"></td>
+                                </tr>
+                                <tr>
+                                    <td>Code Postal:</td>
+                                    <td><input type="number" name="codepostal"></td>
+                                </tr>
+                                <tr>
+                                    <td>Pays:</td>
+                                    <td><input type="text" name="pays"></td>
+                                </tr>
+                                <tr>
+                                    <td>telephone:</td>
+                                    <td><input type="tel" name="telephone"></td>
+                                </tr>
+                                <tr>
+                                    <td>E-mail:</td>
+                                    <td><input type="email" name="mail"></td>
+                                </tr>
+                                <tr>
+                                    <td>Identifiant:</td>
+                                    <td><input type="text" name="identifiant"></td>
+                                </tr>
 
-                        <tr>
-                            <td>Mot de passe:</td>
-                            <td><input type="password" name="mot_de_passe"></td>
-                        </tr>
+                                <tr>
+                                    <td>Mot de passe:</td>
+                                    <td><input type="password" name="mot_de_passe"></td>
+                                </tr>
 
-                        <tr>
-                            <td colspan="2" align="center"><input class="bouton_footer" type="submit" name="submit"
-                                    value="valider"></td>
-                        </tr>
-                    </table>
-                </form>
+                                <tr>
+                                    <td colspan="2" align="center"><input class="bouton_footer" type="submit"
+                                            name="submit" value="valider"></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
             </div>
 
             <div class="user-rdv">
@@ -99,7 +101,6 @@ echo'
                                     <input type="hidden" name="champ-caché" value="1">
                                     <input class="bouton_rdv" type="submit" name="submit" value="Annuler ce RDV">
                             </td>
-                            </td>
                         </tr>
                         <tr>
                             <td>20/04/2022 16:45</td>
@@ -109,7 +110,6 @@ echo'
                                 <form method="post" action="">
                                     <input type="hidden" name="champ-caché" value="1">
                                     <input class="bouton_rdv" type="submit" name="submit" value="Annuler ce RDV">
-                            </td>
                             </td>
                         </tr>
                     </tbody>

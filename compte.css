@@ -1,4 +1,11 @@
-.user-info,.user-consultation,.modif-info,.user-rdv {
+.user-info,.user-consultation,.user-rdv {
+	background-color: #f2f2f2;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	padding: 20px;
+	margin: 20px;
+}
+.modif-info,.inscription-info {
 	background-color: #f2f2f2;
 	border: 1px solid #ddd;
 	border-radius: 5px;

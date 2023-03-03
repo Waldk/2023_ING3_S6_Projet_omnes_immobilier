@@ -6,6 +6,7 @@
     <link href="prime.css" rel="stylesheet" type="text/css" />
     <link href="compte.css" rel="stylesheet" type="text/css" />
     <link href="chatroom.css" rel="stylesheet" type="text/css" />
+    <link href="formulaire_compte.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="OMNES.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/92cddb0a79.js" crossorigin="anonymous"></script>
@@ -24,25 +25,22 @@
     <div id="wrapper">
         <?php
         include("scripts/header.php");
-        ?>
-
-        <?php
         include("scripts/deroulant.php");
         ?>
 
         <section>
-            <!--
-            <?php
-            include("scripts/compte_client.php");
-            ?> -->
-    
-            <?php
-            include("scripts/compte_agent.php");
-            ?>
-            
+        <?php
+
+            if ($_SESSION['Omnes']['type_account'] == 'Client') {
+                include("scripts/compte_client.php");
+            } else if ($_SESSION['Omnes']['type_account'] == 'Agent immobilier') {
+                include("scripts/compte_agent.php");
+            } else {
+                include("scripts/compte_inscription.php");
+            }
+        ?>
+
         </section>
-
-
         <?php
         include("scripts/footer.php");
         ?>
