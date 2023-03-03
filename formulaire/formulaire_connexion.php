@@ -6,7 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="../connexion.css" rel="stylesheet" type="text/css"/>
     <link rel="shortcut icon" href="../image/OMNES.ico">
-    <script src="https://kit.fontawesome.com/92cddb0a79.js" crossorigin="anonymous"></script>
 </head>
 <body>
 	<div id="wrapper">
@@ -27,13 +26,6 @@
 				<input type="password" placeholder="Entrer le mot de passe" name="mot_de_passe" required>
 
 				<input type="submit" id='submit' value='valider' >
-				<?php
-				if(isset($_POST['erreur'])){
-				$err = $_POST['erreur'];
-				if($err==1 || $err==2)
-				echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
-				}
-				?>
 			</form>
  		</div>
     </div>
