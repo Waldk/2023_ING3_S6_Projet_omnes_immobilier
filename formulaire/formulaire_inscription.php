@@ -7,7 +7,7 @@
 </head>
 <body>
 	<h3>Formulaire d'abonnement</h3>
-	<form action="../scripts/inscription.php" method="post">
+	<form action="test1_inscription.php" method="post">
 		<table border="1">
 			<tr>
 				<td>Nom:</td>

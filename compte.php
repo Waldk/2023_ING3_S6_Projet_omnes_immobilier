@@ -4,6 +4,8 @@
     <title>Prime Properties</title>
     <meta charset="utf-8" />
     <link href="prime.css" rel="stylesheet" type="text/css" />
+    <link href="compte.css" rel="stylesheet" type="text/css" />
+    <link href="chatroom.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="OMNES.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/92cddb0a79.js" crossorigin="anonymous"></script>
@@ -110,7 +112,19 @@
                     </tbody>
                 </table>
             </div>
+            
         </section>
+        <div id="chat-container">
+                <div id="chat-header">
+                    <h2>Chat avec le client</h2>
+                    <button id="close-chat-btn">X</button>
+                </div>
+                <div id="chat-messages"></div>
+                <div id="chat-input">
+                    <textarea id="message-input" placeholder="Saisissez votre message"></textarea>
+                    <button id="send-message-btn">Envoyer</button>
+                </div>
+        </div>
 
         <?php
         include("scripts/footer.php");
