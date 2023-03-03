@@ -19,13 +19,16 @@
         ?>
 
 
-        <form class="p-3">
-            <div class="col-12 col-md-8 container"><br><br><br>
-                <input id="recherche">
-                <button class="fas fa-search btn" id="search-btn"></button>
-                <br><br><br><br><br><br>
+        <div class="wrap"><br><br><br>
+            <div class="search">
+                
+                <input  type="text" class="searchTerm" placeholder="Que voulez-vous rechercher?">
+                <button type="submit" class="searchButton">
+                    <i class="fa fa-search"></i>
+                </button>
+                <br><br><br>
             </div>
-        </form>
+        </div>
 
         <?php
             include("scripts/footer.php");
