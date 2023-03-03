@@ -1,39 +1,74 @@
-<!DOCTYPE html>
+<?php
+echo'
 
-<head>
-    <title>Prime Properties</title>
-    <meta charset="utf-8" />
-    <link href="prime.css" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href="OMNES.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/92cddb0a79.js" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#button_modif').click(function () {
-                $('.user-info').css('display', 'none');
-                $('.modif-info').css('display', '');
-            });
-        });
-    </script>
-</head>
+<div class="user-info">
+                <h2>Informations personnelles</h2>
+                <div class="user-name">Nom et prénom : Waldeck Felix</div>
+                <div class="user-address">Adresse : 123 rue du Commerce, 75001 Paris</div>
+                <div class="user-phone">Téléphone : 01 23 45 67 89</div>
+                <div class="user-email">E-mail : john.doe@example.com</div>
+                <div class="user-bank">trouver un moyen de cacher une information bancaire</div>
+                <button class="bouton_footer" id="button_modif">Cliquez pour mettre à jour les informations</button>
+            </div>
+            <div class="modif-info" style="display : none;">
+                <h2>Modification d\'informations</h2>
+                <form action="scripts/inscription.php" method="post">
+                    <table border="1">
+                        <tr>
+                            <td>Nom:</td>
+                            <td><input type="text" name="nom"></td>
+                        </tr>
+                        <tr>
+                            <td>Prenom:</td>
+                            <td><input type="text" name="prenom"></td>
+                        </tr>
+                        <tr>
+                            <td>Adresse:</td>
+                            <td><input type="text" name="Adresse_1"></td>
+                        </tr>
+                        <tr>
+                            <td>Complément d\'adresse:</td>
+                            <td><input type="text" name="Adresse_2"></td>
+                        </tr>
+                        <tr>
+                            <td>Ville:</td>
+                            <td><input type="text" name="ville"></td>
+                        </tr>
+                        <tr>
+                            <td>Code Postal:</td>
+                            <td><input type="number" name="codepostal"></td>
+                        </tr>
+                        <tr>
+                            <td>Pays:</td>
+                            <td><input type="text" name="pays"></td>
+                        </tr>
+                        <tr>
+                            <td>telephone:</td>
+                            <td><input type="tel" name="telephone"></td>
+                        </tr>
+                        <tr>
+                            <td>E-mail:</td>
+                            <td><input type="email" name="mail"></td>
+                        </tr>
+                        <tr>
+                            <td>Identifiant:</td>
+                            <td><input type="text" name="identifiant"></td>
+                        </tr>
 
-<body>
-    <div id="wrapper">
-        <?php
-        include("scripts/header.php");
-        ?>
+                        <tr>
+                            <td>Mot de passe:</td>
+                            <td><input type="password" name="mot_de_passe"></td>
+                        </tr>
 
-        <?php
-        include("scripts/deroulant.php");
-        ?>
+                        <tr>
+                            <td colspan="2" align="center"><input class="bouton_footer" type="submit" name="submit"
+                                    value="valider"></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
 
-        <section>
-            <!--
-            <?php
-                include("scripts/compte_client.php");
-            ?> -->
-        <div class="user-rdv">
+            <div class="user-rdv">
                 <h2>Rendez-vous à venir</h2>
                 <table id="consultation">
                     <thead>
@@ -110,12 +145,6 @@
                     </tbody>
                 </table>
             </div>
-        </section>
 
-        <?php
-        include("scripts/footer.php");
-        ?>
-    </div>
-</body>
-
-</html>
+';
+?>
