@@ -35,9 +35,15 @@
                 include("scripts/compte_client.php");
             } else if ($_SESSION['Omnes']['type_account'] == 'Agent immobilier') {
                 include("scripts/compte_agent.php");
+            } else if ($_SESSION['Omnes']['type_account'] == 'Admin') {
+                include("scripts/compte_admin.php");
             } else {
                 include("scripts/compte_inscription.php");
             }
+        ?>
+
+        <?php
+            include("formulaire/formulaire_ajout_bien.php");
         ?>
 
         </section>

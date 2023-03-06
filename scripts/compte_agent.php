@@ -9,7 +9,7 @@ echo '
                 <div class="user-bank">trouver un moyen de cacher une information bancaire</div>
                 <button class="bouton_footer" id="button_modif">Cliquez pour mettre à jour les informations</button>
             </div>
-            <div class="modif-info" style="display : ;">
+            <div class="modif-info" style="display : none;">
                 <h2>Modification d\'informations</h2>
                     <div id="container">
                         <form action="scripts/inscription.php" method="post">

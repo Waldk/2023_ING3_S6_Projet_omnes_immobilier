@@ -1,8 +1,9 @@
 <?php
 echo'
+	<div class="ajout-bien" style="display : ;">
 	<h2>Formulaire d\'ajout de biens</h2>
 	<div id="container">
-	<form action="script_ajout_bien.php" method="post">
+	<form action="../scripts/script_ajout_bien.php" method="post">
 		<table border="0">
 			<tr>
 				<td>Nom:</td>
@@ -65,5 +66,6 @@ echo'
 			</tr>
 		</table>
 	</form>
+</div>
 </div>';
 ?>

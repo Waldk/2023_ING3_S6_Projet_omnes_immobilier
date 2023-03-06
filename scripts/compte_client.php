@@ -1,7 +1,7 @@
 <?php
 echo'
 
-<div class="user-info">
+            <div class="user-info">
                 <h2>Informations personnelles</h2>
                 <div class="user-name">Nom et prénom : Waldeck Felix</div>
                 <div class="user-address">Adresse : 123 rue du Commerce, 75001 Paris</div>
@@ -10,7 +10,7 @@ echo'
                 <div class="user-bank">trouver un moyen de cacher une information bancaire</div>
                 <button class="bouton_footer" id="button_modif">Cliquez pour mettre à jour les informations</button>
             </div>
-            <div class="modif-info" style="display : ;">
+            <div class="modif-info" style="display : none;">
                 <h2>Modification d\'informations</h2>
                     <div id="container">
                         <form action="scripts/inscription.php" method="post">

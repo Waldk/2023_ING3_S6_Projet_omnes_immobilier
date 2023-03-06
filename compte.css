@@ -1,11 +1,4 @@
-.user-info,.user-consultation,.user-rdv {
-	background-color: #f2f2f2;
-	border: 1px solid #ddd;
-	border-radius: 5px;
-	padding: 20px;
-	margin: 20px;
-}
-.modif-info,.inscription-info {
+.user-info,.user-consultation,.user-rdv,.modif-info,.inscription-info,.ajout-bien {
 	background-color: #f2f2f2;
 	border: 1px solid #ddd;
 	border-radius: 5px;

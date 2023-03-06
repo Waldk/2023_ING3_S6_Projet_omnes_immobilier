@@ -3,7 +3,7 @@ echo'
 <div class="inscription-info" style="display : ;">
 <h2>Inscrivez-vous</h2>
 <div id="container">
-			<form action="test1_inscription.php" method="post">
+			<form action="inscription.php" method="post">
 				<table border="0">
 					<tr>
 						<td>Nom:</td>
@@ -91,5 +91,5 @@ echo'
 				</table>
 			</form>
  		</div>
-         </div>';
+        </div>';
         ?>
