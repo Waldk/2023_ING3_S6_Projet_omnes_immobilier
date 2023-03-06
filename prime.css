@@ -409,6 +409,9 @@ a{
     padding: 4px;
     color: black;
 }
+.bouton_resa{
+	text-align: center;
+}
 .titre{ 
     text-align: center;
     color: #008CCE;

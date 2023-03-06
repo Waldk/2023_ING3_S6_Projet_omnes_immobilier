@@ -71,8 +71,11 @@
             <p><span STYLE="padding:0 0 0 40px;">Nombre de pièces : <strong>4 pièces ° 3 chambres ° 76m² ° Etage 4/6 avec ascenseur</strong></p>
             <p><span STYLE="padding:0 0 0 40px;">Adresse : <strong>47 rue Gambetta 93100 Montreuil</strong></p>
             <p><span STYLE="padding:0 0 0 40px;">Prix : <strong>647 000 €</strong></p>
-            
+            <div class="bouton_resa">
+                <button class="bouton_footer" class="btn" id="reserver_btn"><a href="reservation.php">Réserver</a></button>
+            </div>  
         </div>
+
         </div>
         <script>
             let slideIndex = 1;
