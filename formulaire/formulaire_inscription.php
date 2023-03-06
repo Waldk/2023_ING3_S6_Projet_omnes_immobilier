@@ -10,7 +10,7 @@
 <body>
 	<div id="wrapper">
         <div id="container">
-			<form action="inscription.php" method="post">
+			<form action="../scripts/inscription.php" method="post">
 				<div class="logo">
 					<img src="../image/OMNES.ico" style="width: 40%; height: auto;">
 					<h1>Inscription</h1>
