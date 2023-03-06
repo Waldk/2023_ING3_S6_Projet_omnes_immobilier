@@ -29,7 +29,7 @@
         ?>
 
         <section>
-        <?php
+            <?php
 
             if ($_SESSION['Omnes']['type_account'] == 'Client') {
                 include("scripts/compte_client.php");
@@ -40,12 +40,7 @@
             } else {
                 include("scripts/compte_inscription.php");
             }
-        ?>
-
-        <?php
-            include("formulaire/formulaire_ajout_bien.php");
-        ?>
-
+            ?>
         </section>
         <?php
         include("scripts/footer.php");
