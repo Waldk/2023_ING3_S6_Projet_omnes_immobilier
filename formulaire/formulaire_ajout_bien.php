@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title> Formulaire</title>
-</head>
-<body>
-	<h3>Formulaire d'ajout de biens</h3>
-	<form action="script_ajout_bien.php" method="post">
-		<table border="1">
+<?php
+echo'
+	<div class="ajout-bien" style="display : none;">
+	<h2>Formulaire d\'ajout de biens</h2>
+	<div id="container">
+	<form action="../scripts/script_ajout_bien.php" method="post">
+		<table border="0">
 			<tr>
 				<td>Nom:</td>
 				<td><input type="text" name="nom"></td>
@@ -18,7 +14,7 @@
 				<td><input type="text" name="Adresse_1"></td>
 			</tr>
             <tr>
-				<td>Complément d'adresse:</td>
+				<td>Complément d\'adresse:</td>
 				<td><input type="text" name="Adresse_2"></td>
 			</tr>
 			<tr>
@@ -70,5 +66,6 @@
 			</tr>
 		</table>
 	</form>
-</body> 
-</html>
+</div>
+</div>';
+?>

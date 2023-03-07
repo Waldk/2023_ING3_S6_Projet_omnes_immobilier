@@ -1,15 +1,22 @@
-.user-info,.user-consultation,.modif-info,.user-rdv {
+.user-info,.user-consultation, .user-rdv, .modif-info, .inscription-info, .ajout-bien {
 	background-color: #f2f2f2;
 	border: 1px solid #ddd;
 	border-radius: 5px;
 	padding: 20px;
 	margin: 20px;
 }
-.user-info h2 {
+.user-info h2, .user-list h2 {
 margin-top: 0;
 }
-.user-info div {
+.user-info div, .user-list div {
 margin-bottom: 10px;
+}
+.user-list{
+	background-color: #bebcbc;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	padding: 20px;
+	margin: 20px;
 }
 .user-name {
 font-weight: bold;
@@ -47,4 +54,7 @@ color: navy;
  	border-radius: 8px;
  	cursor: pointer;
  	width: 100%;
+}
+#button_users, #button_bien{
+	padding-bottom: 100px;
 }
