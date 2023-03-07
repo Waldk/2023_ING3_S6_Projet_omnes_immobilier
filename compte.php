@@ -3,8 +3,8 @@
 <head>
     <title>Prime Properties</title>
     <meta charset="utf-8" />
-    <link href="prime.css" rel="stylesheet" type="text/css" />
     <link href="compte.css" rel="stylesheet" type="text/css" />
+    <link href="prime.css" rel="stylesheet" type="text/css" />
     <link href="chatroom.css" rel="stylesheet" type="text/css" />
     <link href="formulaire_compte.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="OMNES.ico">
@@ -16,6 +16,12 @@
             $('#button_modif').click(function () {
                 $('.user-info').css('display', 'none');
                 $('.modif-info').css('display', '');
+            });
+            $('#button_users').click(function () {
+                $('.user-list').css('display', '');
+            });
+            $('#button_bien').click(function () {
+                $('.ajout-bien').css('display', '');
             });
         });
     </script>
