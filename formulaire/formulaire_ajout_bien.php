@@ -1,6 +1,6 @@
 <?php
 echo'
-	<div class="ajout-bien" style="display : ;">
+	<div class="ajout-bien" style="display : none;">
 	<h2>Formulaire d\'ajout de biens</h2>
 	<div id="container">
 	<form action="../scripts/script_ajout_bien.php" method="post">

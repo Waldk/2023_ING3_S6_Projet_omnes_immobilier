@@ -10,9 +10,10 @@ $lieu = "";
 $adresse_lieu = "";
 $ville_lieu = "";
 $code_lieu = "";
+$id_rdv = "";
 
 $client = $_SESSION['Omnes']['user_id'];
-$sql = "SELECT Agent_immo,Date,Lieu FROM RDV JOIN Users ON Users.identifiant = RDV.Client WHERE Users.identifiant = \"$client\" and RDV.effectue=\"0\"";
+$sql = "SELECT Agent_immo,Date,Lieu,id_rdv FROM RDV JOIN Users ON Users.identifiant = RDV.Client WHERE Users.identifiant = \"$client\" and RDV.effectue=\"0\"";
 $resultat = mysqli_query($sessionsql, $sql);
 
 echo '
@@ -35,12 +36,13 @@ while ($row = mysqli_fetch_assoc($resultat)) {
     $agent_immo = $row['Agent_immo'];
     $date = $row['Date'];
     $lieu = $row['Lieu'];
+    $id_rdv = $row['id_rdv'];
     $sql = "SELECT Adresse1,Ville,Code_postal FROM biens WHERE nom = \"$lieu\"";
     $resultat2 = mysqli_query($sessionsql, $sql);
     while($row = mysqli_fetch_assoc($resultat2)) {
-        $adresse_lieu .=$row['Adresse1'];
-        $ville_lieu .=$row['Ville'];
-        $code_lieu .=$row['Code_postal'];
+        $adresse_lieu =$row['Adresse1'];
+        $ville_lieu =$row['Ville'];
+        $code_lieu =$row['Code_postal'];
     }
 
     echo
@@ -50,9 +52,10 @@ while ($row = mysqli_fetch_assoc($resultat)) {
             <td><a href=\"vers le lien du bien \">$lieu</a></td>
             <td>$adresse_lieu, $code_lieu $ville_lieu</td>
             <td colspan=\"2\" align=\"center\">
-                <form method=\"post\" action=\"\">
-                    <input type=\"hidden\" name=\"champ-caché\" value=\"1\">
-                    <input class=\"bouton_rdv\" type=\"submit\" name=\"submit\" value=\"Annuler ce RDV\">
+                <form method=\"post\" action=\"scripts/delete_rdv.php\" >
+                    <input type=\"hidden\" name=\"rdv_id\" value=\"$id_rdv\">
+                    <button class=\"bouton_rdv\" type=\"submit\" name=\"submit$id_rdv\">Annuler ce RDV</button>
+                </form>
             </td>
         </tr>";
 }

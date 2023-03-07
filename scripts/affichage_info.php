@@ -36,7 +36,4 @@ while ($row = mysqli_fetch_assoc($resultat)) {
         <button class=\"bouton_footer\" id=\"button_modif\">Cliquez pour mettre à jour les informations</button>
     </div>";
 }
-
-
-
 ?>
