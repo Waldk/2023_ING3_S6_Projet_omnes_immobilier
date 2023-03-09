@@ -36,13 +36,16 @@
 
         <section>
             <?php
-
-            if ($_SESSION['Omnes']['type_account'] == 'Client') {
-                include("scripts/compte_client.php");
-            } else if ($_SESSION['Omnes']['type_account'] == 'Agent immobilier') {
-                include("scripts/compte_agent.php");
-            } else if ($_SESSION['Omnes']['type_account'] == 'Admin') {
-                include("scripts/compte_admin.php");
+            if (isset($_SESSION['Omnes']['type_account'])) {
+                if ($_SESSION['Omnes']['type_account'] == 'Client') {
+                    include("scripts/compte_client.php");
+                } else if ($_SESSION['Omnes']['type_account'] == 'Agent immobilier') {
+                    include("scripts/compte_agent.php");
+                } else if ($_SESSION['Omnes']['type_account'] == 'Admin') {
+                    include("scripts/compte_admin.php");
+                } else {
+                    include("scripts/compte_inscription.php");
+                }
             } else {
                 include("scripts/compte_inscription.php");
             }
