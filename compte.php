@@ -2,6 +2,35 @@
 
 <head>
     <title>Prime Properties</title>
+    <style type="text/css">
+        .overlay {
+            display: none;
+        }
+        .overlay-content {
+            position: fixed;
+            height: 250px;
+            width: 200px;
+            right: 15px;
+            bottom: 75px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #000;;
+        }
+        .btn-overlay {
+            display: inline;
+            right: 30px;
+            bottom: 30px;
+            width: 8%;
+            height: 8%;
+            position: fixed;
+            border: 1px solid #fff;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+    </style>
     <meta charset="utf-8" />
     <link href="compte.css" rel="stylesheet" type="text/css" />
     <link href="prime.css" rel="stylesheet" type="text/css" />
@@ -51,10 +80,37 @@
             }
             ?>
         </section>
-        <?php
-        include("scripts/footer.php");
-        ?>
-    </div>
-</body>
+        <button id="togg1" class="btn-overlay">Chat</button>
+        <div class="overlay">
+            <div id="d1" class="overlay-content">
+                <h2>Chat en direct</h2>
+                <p>Ceci est un exemple de boîte en superposition.</p>
+            </div>
+        </div>
+        <script type="text/javascript">
+            let togg1 = document.getElementById("togg1");
+            let d1 = document.getElementById("d1");
+            togg1.addEventListener("click", () => {
+              if(getComputedStyle(d1).display != "none"){
+                d1.style.display = "none";
+            } else {
+                d1.style.display = "inline";
+            }
+        })
 
+            function togg(){
+              if(getComputedStyle(d1).display != "none"){
+                d1.style.display = "none";
+            } else {
+                d1.style.display = "block";
+            }
+        };
+        togg1.onclick = togg;
+    </script>
+
+    <?php
+    include("scripts/footer.php");
+    ?>
+</div>
+</body>
 </html>
