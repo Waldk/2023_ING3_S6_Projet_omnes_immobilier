@@ -15,19 +15,19 @@ $database = 'test_projet_1';
 $sessionsql = mysqli_connect($host, $user, $password, $database);
 
 //nom
-$sql = "SELECT Adresse1,Ville,Code_postal,prix,Photo FROM biens WHERE nom = \"$search\"";
+$sql = "SELECT nom,Adresse1,Ville,Code_postal,prix,Photo FROM biens WHERE nom = \"$search\"";
 $resultat = mysqli_query($sessionsql, $sql);
 
 if (mysqli_num_rows($resultat) == 0) {
-    $sql = "SELECT Adresse1,Ville,Code_postal,prix,Photo FROM biens WHERE Agent_immo = \"$search\"";
+    $sql = "SELECT nom,Adresse1,Ville,Code_postal,prix,Photo FROM biens WHERE Agent_immo = \"$search\"";
     $resultat = mysqli_query($sessionsql, $sql);
 }
  if (mysqli_num_rows($resultat) == 0) {
-    $sql = "SELECT Adresse1,Ville,Code_postal,prix,Photo FROM biens WHERE Ville = \"$search\"";
+    $sql = "SELECT nom,Adresse1,Ville,Code_postal,prix,Photo FROM biens WHERE Ville = \"$search\"";
     $resultat = mysqli_query($sessionsql, $sql);
 }
  if (mysqli_num_rows($resultat) == 0) {
-    $sql = "SELECT Adresse1,Ville,Code_postal,prix,Photo FROM biens WHERE id_bien = \"$search\"";
+    $sql = "SELECT nom,Adresse1,Ville,Code_postal,prix,Photo FROM biens WHERE id_bien = \"$search\"";
     $resultat = mysqli_query($sessionsql, $sql);
 }
 
@@ -40,6 +40,7 @@ echo "
     }
 
     while ($row = mysqli_fetch_assoc($resultat)) {
+        $nom = $row['nom'];
         $adresse_lieu = $row['Adresse1'];
         $ville_lieu = $row['Ville'];
         $code_lieu = $row['Code_postal'];
