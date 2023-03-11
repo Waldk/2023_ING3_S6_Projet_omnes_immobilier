@@ -20,66 +20,11 @@
     include("scripts/deroulant.php");
     ?>
 
-    <div class="container">
-
-      <div class="mySlides">
-        <img src="image/semaine1.png" style="width:100%">
-      </div>
-
-      <div class="mySlides">
-        <img src="image/semaine2.png" style="width:100%">
-      </div>
-
-      <divc class="mySlides">
-        <img src="image/semaine3.png" style="width:100%">
-    </div>
-
-    <div class="mySlides">
-      <img src="image/semaine4.png" style="width:100%">
-    </div>
-
-    <div class="mySlides">
-      <img src="image/semaine5.png" style="width:100%">
-    </div>
-
-    <div class="mySlides">
-      <img src="image/semaine6.png" style="width:100%">
-    </div>
-
-    <div class="row">
-      <div class="column">
-        <img class="demo cursor" src="image/semaine1.png" style="width:100%" onclick="currentSlide(1)">
-      </div>
-      <div class="column">
-        <img class="demo cursor" src="image/semaine2.png" style="width:100%" onclick="currentSlide(2)">
-      </div>
-      <div class="column">
-        <img class="demo cursor" src="image/semaine3.png" style="width:100%" onclick="currentSlide(3)">
-      </div>
-      <div class="column">
-        <img class="demo cursor" src="image/semaine4.png" style="width:100%" onclick="currentSlide(4)">
-      </div>
-      <div class="column">
-        <img class="demo cursor" src="image/semaine5.png" style="width:100%" onclick="currentSlide(5)">
-      </div>
-      <div class="column">
-        <img class="demo cursor" src="image/semaine6.png" style="width:100%" onclick="currentSlide(6)">
-      </div>
-    </div>
-    <div class="descr">
-
-      <h3 align="center">Numéro d'identification : <strong>Apartement 387</strong></h3>
-      <p>Description du bien :</p>
-      <p><span STYLE="padding:0 0 0 40px;">Nombre de pièces : <strong>4 pièces ° 3 chambres ° 76m² ° Etage 4/6 avec
-            ascenseur</strong></p>
-      <p><span STYLE="padding:0 0 0 40px;">Adresse : <strong>47 rue Gambetta 93100 Montreuil</strong></p>
-      <p><span STYLE="padding:0 0 0 40px;">Prix : <strong>647 000 €</strong></p>
-      <div class="bouton_resa">
-        <button class="bouton_footer" class="btn" id="reserver_btn"><a href="reservation.php">Réserver</a></button>
-      </div>
-    </div>
-
+    <?php
+    include("scripts/affichage_detail_bat.php");
+    ?>
   </div>
+  
   <script>
     let slideIndex = 1;
     showSlides(slideIndex);
