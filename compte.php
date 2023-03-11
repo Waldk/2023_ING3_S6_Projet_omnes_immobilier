@@ -2,44 +2,14 @@
 
 <head>
     <title>Prime Properties</title>
-    <style type="text/css">
-        .overlay {
-            display: none;
-        }
-        .overlay-content {
-            position: fixed;
-            height: 250px;
-            width: 200px;
-            right: 15px;
-            bottom: 75px;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            border: 1px solid #000;;
-        }
-        .btn-overlay {
-            display: inline;
-            right: 30px;
-            bottom: 30px;
-            width: 8%;
-            height: 8%;
-            position: fixed;
-            border: 1px solid #fff;
-            background-color: #007bff;
-            color: #fff;
-            border-radius: 30px;
-            cursor: pointer;
-        }
-    </style>
     <meta charset="utf-8" />
     <link href="compte.css" rel="stylesheet" type="text/css" />
     <link href="prime.css" rel="stylesheet" type="text/css" />
     <link href="chatroom.css" rel="stylesheet" type="text/css" />
     <link href="formulaire_compte.css" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href="OMNES.ico">
+    <link rel="shortcut icon" href="image/OMNES.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/92cddb0a79.js" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $('#button_modif').click(function () {
@@ -80,37 +50,83 @@
             }
             ?>
         </section>
-        <button id="togg1" class="btn-overlay">Chat</button>
-        <div class="overlay">
-            <div id="d1" class="overlay-content">
-                <h2>Chat en direct</h2>
-                <p>Ceci est un exemple de boîte en superposition.</p>
-            </div>
-        </div>
-        <script type="text/javascript">
-            let togg1 = document.getElementById("togg1");
-            let d1 = document.getElementById("d1");
-            togg1.addEventListener("click", () => {
-              if(getComputedStyle(d1).display != "none"){
-                d1.style.display = "none";
-            } else {
-                d1.style.display = "inline";
-            }
-        })
 
-            function togg(){
-              if(getComputedStyle(d1).display != "none"){
-                d1.style.display = "none";
-            } else {
-                d1.style.display = "block";
-            }
-        };
-        togg1.onclick = togg;
+        <div id="chat-container">
+            <div id="chat-header">
+                <h2>Chatbox</h2>
+            </div>
+            <div id="chatbox">
+             <?php
+             if(file_exists("log.html") && filesize("log.html") > 0){
+                 $contents = file_get_contents("log.html");
+                 echo $contents;
+             }
+             ?>
+         </div>
+         <form class="centre" name="message" action="">
+             <input name="usermsg" type="text" id="usermsg" />
+             <input name="submitmsg" type="submit" id="submitmsg" value="Envoyer" />
+         </form>
+        </div>
+
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <?php  
+        if (isset($_SESSION['Omnes']['user_id'])){
+            echo '
+            <script type="text/javascript">
+            let d1 = document.getElementById("chat-container");
+            d1.style.display = "inline";  
+            </script>
+            ';
+        } else {
+            echo '
+            <script type="text/javascript">
+            let d1 = document.getElementById("chat-container");
+            d1.style.display = "none";  
+            </script>
+            ';
+        }
+    ?>
+     
+     
+
+    <script type="text/javascript">
+     // jQuery Document
+     $(document).ready(function () {
+         $("#submitmsg").click(function () {
+             var clientmsg = $("#usermsg").val();
+             $.post("post.php", { text: clientmsg });
+             $("#usermsg").val("");
+             return false;
+         });
+
+         function loadLog() {
+            var oldscrollHeight = $("#chatbox")[0].scrollHeight - 20; //Hauteur de défilement avant la requête
+             $.ajax({
+                 url: "log.html",
+                 cache: false,
+                 success: function (html) {
+                     $("#chatbox").html(html); //Insérez le log de chat dans la #chatbox div
+                     //Auto-scroll
+                     var newscrollHeight = $("#chatbox")[0].scrollHeight - 20; //Hauteur de défilement apres la requête
+                     if(newscrollHeight > oldscrollHeight){
+                         $("#chatbox").animate({ scrollTop: newscrollHeight }, 'normal'); //Défilement automatique
+                     }
+                 }
+            });
+    }
+    setInterval (loadLog, 2500);
+    
+    });
     </script>
 
-    <?php
-    include("scripts/footer.php");
-    ?>
+
+
+
+<?php
+include("scripts/footer.php");
+?>
 </div>
 </body>
 </html>

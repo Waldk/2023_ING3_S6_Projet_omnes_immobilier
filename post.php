@@ -1,9 +1,9 @@
 <?php
 session_start();
-if(isset($_SESSION['name'])){
+if(isset($_SESSION['Omnes']['user_id'])){
  $text = $_POST['text'];
 
- $text_message = "<div class='msgln'><span class='chat-time'>".date("g:i A")."</span> <b class='username'>".$_SESSION['name']."</b> ".stripslashes(htmlspecialchars($text))."<br></div>";
+ $text_message = "<div class='msgln'><span class='chat-time'>".date("g:i A")."</span> <b class='username'>".$_SESSION['Omnes']['user_id']."</b> ".stripslashes(htmlspecialchars($text))."<br></div>";
  // file_put_contents("log.html", $text_message, FILE_APPEND | LOCK_EX);
 
  $myfile = fopen(__DIR__ . "/log.html", "a") or die("Impossible d'ouvrir le fichier " . __DIR__ . "/log.html");
