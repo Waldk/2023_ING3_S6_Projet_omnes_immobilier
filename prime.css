@@ -427,7 +427,6 @@ select {
 }
 table {
 	border-spacing: 10px 20px;
-	border : 1px black;
 }
 .reserve {
  width:80%;
@@ -445,6 +444,39 @@ table {
     padding: 4px;
     color: black;
 }
-#rdv{
-	border : 1px black;
+.bouton1-change-color-clique {
+  background-color: red;
+}
+.bouton2-change-color-clique {
+  background-color: red;
+}
+.bouton3-change-color-clique {
+  background-color: red;
+}
+.bouton4-change-color-clique {
+  background-color: red;
+}
+.bouton5-change-color-clique {
+  background-color: red;
+}
+.bouton6-change-color-clique {
+  background-color: red;
+}
+.bouton7-change-color-clique {
+  background-color: red;
+}
+.bouton8-change-color-clique {
+  background-color: red;
+}
+.bouton9-change-color-clique {
+  background-color: red;
+}
+.bouton10-change-color-clique {
+  background-color: red;
+}
+.bouton11-change-color-clique {
+  background-color: red;
+}
+.bouton12-change-color-clique {
+  background-color: red;
 }
