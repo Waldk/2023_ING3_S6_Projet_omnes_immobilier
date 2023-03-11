@@ -19,25 +19,6 @@
         include("scripts/deroulant.php");
         ?>
 
-        <?php
-
-        try {
-            // On se connecte à MySQL
-            $mysqlClient = new PDO('mysql:host=localhost;dbname=test_projet_1;charset=utf8', 'root', '');
-        } catch (Exception $e) {
-            // En cas d'erreur, on affiche un message et on arrête tout
-            die('404 Error : ' . $e->getMessage());
-        }
-        $requete = "SELECT * FROM Biens where id_bien = 1";
-        $logementstatement = $mysqlClient->prepare($requete);
-        $logementstatement->execute();
-        $logements = $logementstatement->fetchAll();
-
-
-        // On affiche chaque recette une à une
-        foreach ($logements as $logement) {
-        } ?>
-
         <div class="moment1">
             <h1 class="affaire">LES EVENEMENTS DE LA SEMAINE !</h1>
             <img class="image_info" src="image/villa.jpg">

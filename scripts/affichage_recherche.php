@@ -15,19 +15,19 @@ $database = 'test_projet_1';
 $sessionsql = mysqli_connect($host, $user, $password, $database);
 
 //nom
-$sql = "SELECT Adresse1,Ville,Code_postal,prix,Photo FROM biens WHERE nom = \"$search\"";
+$sql = "SELECT Adresse1,Ville,Code_postal,prix,Photo,id_bien FROM biens WHERE nom = \"$search\"";
 $resultat = mysqli_query($sessionsql, $sql);
 
 if (mysqli_num_rows($resultat) == 0) {
-    $sql = "SELECT Adresse1,Ville,Code_postal,prix,Photo FROM biens WHERE Agent_immo = \"$search\"";
+    $sql = "SELECT Adresse1,Ville,Code_postal,prix,Photo,id_bien FROM biens WHERE Agent_immo = \"$search\"";
     $resultat = mysqli_query($sessionsql, $sql);
 }
  if (mysqli_num_rows($resultat) == 0) {
-    $sql = "SELECT Adresse1,Ville,Code_postal,prix,Photo FROM biens WHERE Ville = \"$search\"";
+    $sql = "SELECT Adresse1,Ville,Code_postal,prix,Photo,id_bien FROM biens WHERE Ville = \"$search\"";
     $resultat = mysqli_query($sessionsql, $sql);
 }
  if (mysqli_num_rows($resultat) == 0) {
-    $sql = "SELECT Adresse1,Ville,Code_postal,prix,Photo FROM biens WHERE id_bien = \"$search\"";
+    $sql = "SELECT Adresse1,Ville,Code_postal,prix,Photo,id_bien FROM biens WHERE id_bien = \"$search\"";
     $resultat = mysqli_query($sessionsql, $sql);
 }
 
@@ -45,11 +45,12 @@ echo "
         $code_lieu = $row['Code_postal'];
         $prix = $row['prix'];
         $photo = $row['Photo'];
+        $id_bien = $row['id_bien'];
 
     echo "
         <div class=\"slide\">
             <div class=\"slide-img \" style=\"background-image: url(data:image/jpg;base64," . base64_encode($row['Photo']) . ");\">
-                <a href=\"Detail_batiment.php\">Voir plus</a>
+                <a href=\"Detail_batiment.php?id_bien=$id_bien\" method=\"GET\">Voir plus</a>
             </div>
             <br>
             <div>
