@@ -12,7 +12,7 @@ $pays = isset($_POST["pays"]) ? $_POST["pays"] : "";
 $type_bien = isset($_POST["type_bien"]) ? $_POST["type_bien"] : "";
 $description = isset($_POST["description"]) ? $_POST["description"] : "";
 $video = isset($_POST["video"]) ? $_POST["video"] : "";
-$photo = isset($_POST["photo"]) ? $_POST["photo"] : "";
+$photo = isset($_FILES['photo']['name']) ? $_FILES['photo']['name'] : "";
 $agent = isset($_POST["agent"]) ? $_POST["agent"] : "";
 
 $erreur = "";
@@ -39,6 +39,15 @@ if ($prix == "") {
     $erreur .= "Le champ prix est vide. <br>";
 }
 
+$photo_tmp = $_FILES['photo']['tmp_name'];
+// vérification de l'extension de la photo
+$photo_ext = strtolower(pathinfo($photo, PATHINFO_EXTENSION));
+if (in_array($photo_ext, array("jpg", "jpeg", "png", "gif")) === false) {
+    echo "Extension non autorisée, veuillez choisir un fichier image.";
+    exit();
+}
+$image = addslashes(file_get_contents($photo_tmp));
+
 if ($erreur == "") {
 
     // Connexion à la base de données
@@ -52,23 +61,14 @@ if ($erreur == "") {
     if (!$session) {
         die('La connexion à la base de données a échoué : ' . mysqli_connect_error());
     }
-
-    // Vérification si l'utilisateur n'existe pas déjà dans la base de données
-    /*$sql = "SELECT * FROM Biens WHERE identifiant = '$identifiant'";
-    $result = mysqli_query($session, $sql);
-    if (mysqli_num_rows($result) > 0) {
-        echo "Cet utilisateur existe déjà.";
-    } else {*/
-        // Insertion des données dans la base de données
-        $sql = "INSERT INTO Biens (nom, Adresse1, Adresse2, ville, code_postal, pays, Type_bien, description, prix, photo, video, agent_immo) 
-                          VALUES ('$nom', '$adresse1', '$adresse2', '$ville', '$codepostal', '$pays', '$type_bien', '$description', '$prix', '$photo', '$video', '$agent')";
-        if (mysqli_query($session, $sql)) {
-            echo "Nouveau bien créé avec succès.";
-           // header('Location: accueil.php');
-        } else {
-            echo "Une erreur est survenue lors de la création du bien : " . mysqli_error($session);
-        }
-    //}
+    $sql = "INSERT INTO Biens (nom, Adresse1, Adresse2, ville, code_postal, pays, Type_bien, description, prix, photo, video, agent_immo) 
+                          VALUES ('$nom', '$adresse1', '$adresse2', '$ville', '$codepostal', '$pays', '$type_bien', '$description', '$prix', '$image', '$video', '$agent')";
+    if (mysqli_query($session, $sql)) {
+        echo "Nouveau bien créé avec succès.";
+        header('Location: ../accueil.php');
+    } else {
+        echo "Une erreur est survenue lors de la création du bien : " . mysqli_error($session);
+    }
 
     // Fermeture de la connexion à la base de données
     mysqli_close($session);
