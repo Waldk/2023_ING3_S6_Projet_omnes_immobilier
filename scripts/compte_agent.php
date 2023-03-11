@@ -142,16 +142,5 @@ echo '
                         </tr>
                     </tbody>
                 </table>
-            </div>
-            <div id="chat-container">
-                <div id="chat-header">
-                    <h2>Chatbox</h2>
-                    <button id="close-chat-btn">X</button>
-                </div>
-                <div id="chat-messages"></div>
-                <div id="chat-input">
-                    <textarea id="message-input" placeholder="Saisissez votre message"></textarea>
-                    <button id="send-message-btn">Envoyer</button>
-                </div>
             </div>';
 ?>
