@@ -19,7 +19,7 @@
 
         <h2 align="center">Réservation d'un bien</h2>
         <div class="descr">
-            <form>
+            <form class="reserve">
                 <table align="center">
                     <tr>
                         <td>Date de Réservation</td>
