@@ -21,10 +21,12 @@ $resultat = mysqli_query($sessionsql, $sql);
 if (mysqli_num_rows($resultat) == 0) {
     $sql = "SELECT Adresse1,Ville,Code_postal,prix,Photo FROM biens WHERE Agent_immo = \"$search\"";
     $resultat = mysqli_query($sessionsql, $sql);
-} else if (mysqli_num_rows($resultat) == 0) {
+}
+ if (mysqli_num_rows($resultat) == 0) {
     $sql = "SELECT Adresse1,Ville,Code_postal,prix,Photo FROM biens WHERE Ville = \"$search\"";
     $resultat = mysqli_query($sessionsql, $sql);
-} else if (mysqli_num_rows($resultat) == 0) {
+}
+ if (mysqli_num_rows($resultat) == 0) {
     $sql = "SELECT Adresse1,Ville,Code_postal,prix,Photo FROM biens WHERE id_bien = \"$search\"";
     $resultat = mysqli_query($sessionsql, $sql);
 }
