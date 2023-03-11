@@ -4,12 +4,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="prime.css" rel="stylesheet" type="text/css"/>
-    <link href="detail.css" rel="stylesheet" type="text/css"/>
     <link rel="shortcut icon" href="image/OMNES.ico">
-    <script src="https://kit.fontawesome.com/92cddb0a79.js" crossorigin="anonymous"></script>
-    <link href="calendrier.css" rel="stylesheet" type="text/css"/>
-    <script src="calendrier.js" crossorigin="anonymous"></script>
-
 
 </head>
 <body>
@@ -22,84 +17,32 @@
         include("scripts/deroulant.php");
         ?>
 
-
         <h2 align="center">Réservation d'un bien</h2>
-
-
-        <div class="calendar">
-  <div class="calendar__month">
-    <div class="cal-month__previous"></div>
-    <div class="cal-month__current"></div>
-    <div class="cal-month__next"></div>
-  </div>
-  <div class="calendar__head">
-    <div class="cal-head__day"></div>
-    <div class="cal-head__day"></div>
-    <div class="cal-head__day"></div>
-    <div class="cal-head__day"></div>
-    <div class="cal-head__day"></div>
-    <div class="cal-head__day"></div>
-    <div class="cal-head__day"></div>
-  </div>
-  <div class="calendar__body">
-    <div class="cal-body__week">
-      <div class="cal-body__day"></div>
-      <div class="cal-body__day"></div>
-      <div class="cal-body__day"></div>
-      <div class="cal-body__day"></div>
-      <div class="cal-body__day"></div>
-      <div class="cal-body__day"></div>
-      <div class="cal-body__day"></div>
-    </div>
-    <div class="cal-body__week">
-      <div class="cal-body__day"></div>
-      <div class="cal-body__day"></div>
-      <div class="cal-body__day"></div>
-      <div class="cal-body__day"></div>
-      <div class="cal-body__day"></div>
-      <div class="cal-body__day"></div>
-      <div class="cal-body__day"></div>
-    </div>
-    <div class="cal-body__week">
-      <div class="cal-body__day"></div>
-      <div class="cal-body__day"></div>
-      <div class="cal-body__day"></div>
-      <div class="cal-body__day"></div>
-      <div class="cal-body__day"></div>
-      <div class="cal-body__day"></div>
-      <div class="cal-body__day"></div>
-    </div>
-    <div class="cal-body__week">
-      <div class="cal-body__day"></div>
-      <div class="cal-body__day"></div>
-      <div class="cal-body__day"></div>
-      <div class="cal-body__day"></div>
-      <div class="cal-body__day"></div>
-      <div class="cal-body__day"></div>
-      <div class="cal-body__day"></div>
-    </div>
-    <div class="cal-body__week">
-      <div class="cal-body__day"></div>
-      <div class="cal-body__day"></div>
-      <div class="cal-body__day"></div>
-      <div class="cal-body__day"></div>
-      <div class="cal-body__day"></div>
-      <div class="cal-body__day"></div>
-      <div class="cal-body__day"></div>
-    </div>
-    <div class="cal-body__week">
-      <div class="cal-body__day"></div>
-      <div class="cal-body__day"></div>
-      <div class="cal-body__day"></div>
-      <div class="cal-body__day"></div>
-      <div class="cal-body__day"></div>
-      <div class="cal-body__day"></div>
-      <div class="cal-body__day"></div>
-    </div>
-  </div>
-</div>
-
-
+        <div class="descr">
+            <form>
+                <table align="center">
+                    <tr>
+                        <td>Date de Réservation</td>
+                        <td><input type="date" id="start" name="date-rdv"></td>
+                    </tr>
+                    <tr>
+                        <td>Choix de l'agent immobilier:</td>
+                        <td>
+                            <select name="agent" name="Nom_agent">
+                                <option selected="selected">Sélectionner votre agent</option>
+                                <option value="Nom_agent">PENNECOT</option>
+                                <option value="Nom_agent">LA</option>
+                                <option value="Nom_agent">FELIX</option>
+                                <option value="Nom_agent">THOMAS</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center"><input type="submit" name="submit" value="valider"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
 
         <?php
             include("scripts/footer.php");
