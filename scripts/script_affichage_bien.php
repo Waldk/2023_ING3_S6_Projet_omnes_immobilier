@@ -20,7 +20,7 @@ while ($row = mysqli_fetch_assoc($resultat)) {
         "<li class=\"element-carousel\">
                     <div class=\"card\">
                         <h2 class=\"card-title\">$nom</h2>
-                        <img src=\"$photo.png\" />
+                        <img style=\"width :300%; height : 300%;\" src=\"data:image/jpg;base64," . base64_encode($row['Photo']) . "\" />
                         <div class=\"card-content\">
                             <p>$description</p>
                             <a href=\"#\" class=\"button\">Read more</a>
@@ -28,7 +28,4 @@ while ($row = mysqli_fetch_assoc($resultat)) {
                     </div>
                 </li>";
 }
-
-
-
 ?>
