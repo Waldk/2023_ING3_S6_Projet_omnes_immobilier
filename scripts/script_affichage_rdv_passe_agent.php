@@ -37,19 +37,20 @@ while ($row = mysqli_fetch_assoc($resultat)) {
     $date = $row['Date'];
     $lieu = $row['Lieu'];
     $id_rdv = $row['id_rdv'];
-    $sql = "SELECT Adresse1,Ville,Code_postal FROM biens WHERE nom = \"$lieu\"";
+    $sql = "SELECT Adresse1,Ville,Code_postal,id_bien FROM biens WHERE nom = \"$lieu\"";
     $resultat2 = mysqli_query($sessionsql, $sql);
     while($row = mysqli_fetch_assoc($resultat2)) {
         $adresse_lieu =$row['Adresse1'];
         $ville_lieu =$row['Ville'];
         $code_lieu =$row['Code_postal'];
+        $id_bien =$row['id_bien'];
     }
 
     echo
         "<tr>
             <td>$date</td>
             <td>$client</td>
-            <td><a href=\"vers le lien du bien \">$lieu</a></td>
+            <td><a href=\"Detail_batiment.php?id_bien=$id_bien\">$lieu</a></td>
             <td>$adresse_lieu, $code_lieu $ville_lieu</td>
             <td colspan=\"2\" align=\"center\">
                 <form method=\"post\" action=\"scripts/delete_rdv.php\">
