@@ -20,6 +20,9 @@
 
         <section class="slider">
             <div class="container">
+            <?php
+            include("scripts/affichage_immoterrain.php");
+            ?><!--
                 <h2 class="titre">Les Terrains à vendre</h2>  
                 <br>
                 <div class="slide">
@@ -83,6 +86,7 @@
                     </div>
                 </div>
             </div>
+-->
         </section>
 
 
