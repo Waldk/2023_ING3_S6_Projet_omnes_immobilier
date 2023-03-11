@@ -1,6 +1,6 @@
 <?php
 include("scripts/affichage_info.php");
-echo'
+echo'       <center>
             <div class="modif-info" style="display : none;">
                 <h2>Modification d\'informations</h2>
                     <div id="container">
@@ -59,7 +59,7 @@ echo'
                             </table>
                         </form>
                     </div>
-            </div>';
+            </div></center>';
 
             include("scripts/script_affichage_rdv.php");
             include("scripts/script_affichage_rdv_passe.php");

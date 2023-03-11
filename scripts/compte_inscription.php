@@ -1,7 +1,8 @@
 <?php
 echo'
-<div class="inscription-info" style="display : ;">
-<h2>Inscrivez-vous</h2>
+<center>
+<div class="inscription-info user-info" style="display : ;">
+<h2 align=center>Inscrivez-vous</h2>
 <div id="container">
 			<form action="inscription.php" method="post">
 				<table border="0">
@@ -91,5 +92,5 @@ echo'
 				</table>
 			</form>
  		</div>
-        </div>';
+        </div></center>';
         ?>

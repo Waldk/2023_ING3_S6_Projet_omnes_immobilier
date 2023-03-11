@@ -4,7 +4,7 @@
     margin-top:2%;
 }
 .modif-info form, .inscription-info form, .ajout-bien form {
-    width:100%;
+    width:50%;
     padding: 30px;
     border: 1px solid #f1f1f1;
     background: #fff;
