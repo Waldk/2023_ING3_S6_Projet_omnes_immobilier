@@ -427,6 +427,7 @@ select {
 }
 table {
 	border-spacing: 10px 20px;
+	border : 1px black;
 }
 .reserve {
  width:80%;
@@ -443,4 +444,7 @@ table {
     margin: 42px;
     padding: 4px;
     color: black;
+}
+#rdv{
+	border : 1px black;
 }

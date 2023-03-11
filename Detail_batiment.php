@@ -74,7 +74,115 @@
             <div class="bouton_resa">
                 <button class="bouton_footer" class="btn" id="reserver_btn"><a href="reservation.php">Réserver</a></button>
             </div>  
+
+            <div class="descr">
+
+              <div class="agent">
+                <img style="float: left; width: 25%; padding-left:50px;" class="image_info" src="image/photo_Téo">
+                <h4 style="float: left; padding-left: 30px;">
+                  Téo Penneçot<br>
+                  Agent Immobilier agréé<br>
+                  Téléphone : +33 7 81 44 42 57<br>
+                  Email : teo.pennecot@edu.ece.fr<br>
+                  Spécialité : Appartements<br>
+                  </h4>
+              </div>
+
+                <div>
+                    <hr class="trait">
+                    <br><br>
+                </div>
+
+              <table align="center">
+                <thead>
+                  <tr>
+                    <th colspan="2">Lundi</th>
+                    <th colspan="2">Mardi</th>
+                    <th colspan="2">Mercredi</th>
+                    <th colspan="2">Jeudi</th>
+                    <th colspan="2">Vendredi</th>
+                    <th colspan="2">Samedi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>AM</td>
+                    <td>PM</td>
+
+                    <td>AM</td>
+                    <td>PM</td>
+                    
+                    <td>AM</td>
+                    <td>PM</td>
+                    
+                    <td>AM</td>
+                    <td>PM</td>
+                    
+                    <td>AM</td>
+                    <td>PM</td>
+                    
+                    <td>AM</td>
+                    <td>PM</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="button" value="" style="width:30px;">
+                    </td>
+                    <td>
+                      <input type="button" value="" style="width:30px;background-color: black;">
+                    </td>
+                    <td>
+                      <input type="button" value="" style="width:30px;">
+                    </td>
+                    <td>
+                      <input type="button" value="" style="width:30px;">
+                    </td>
+                    <td>
+                      <input type="button" value="" style="width:30px;background-color: black;">
+                    </td>
+                    <td>
+                      <input type="button" value="" style="width:30px;">
+                    </td>
+                    <td>
+                      <input type="button" value="" style="width:30px;">
+                    </td>
+                    <td>
+                      <input type="button" value="" style="width:30px;">
+                    </td>
+                    <td>
+                      <input type="button" value="" style="width:30px;">
+                    </td>
+                    <td>
+                      <input type="button" value="" style="width:30px;">
+                    </td>
+                    <td>
+                      <input type="button" value="" style="width:30px; background-color: black;">
+                    </td>
+                    <td>
+                      <input type="button" value="" style="width: 30px; background-color: black;">
+                    </td>
+
+                  </tr>
+                </tbody>
+              </table>
+
+              <div>
+                  <hr class="trait">
+                  <br><br>
+              </div>
+
+
+              <div class="bouton_resa">
+                  <button class="bouton_footer" class="btn" id="reserver_btn"><a href="reservation.php">Prendre rendez-vous</a></button>
+                  <button class="bouton_footer" class="btn" id="reserver_btn"><a href="reservation.php">Voir le CV</a></button>
+              </div>  
+            </div>
+
         </div>
+
+
+
+
 
         </div>
         <script>
