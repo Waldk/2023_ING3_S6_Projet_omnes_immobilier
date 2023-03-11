@@ -19,9 +19,18 @@
             });
             $('#button_users').click(function () {
                 $('.user-list').css('display', '');
+                $('.supp-bien').css('display', 'none');
+                $('.ajout-bien').css('display', 'none');
             });
             $('#button_bien').click(function () {
                 $('.ajout-bien').css('display', '');
+                $('.supp-bien').css('display', 'none');
+                $('.user-list').css('display', 'none');
+            });
+            $('#button_bien_supp').click(function () {
+                $('.supp-bien').css('display', '');
+                $('.ajout-bien').css('display', 'none');
+                $('.user-list').css('display', 'none');
             });
         });
     </script>
@@ -74,12 +83,15 @@
 
     <?php  
         if (isset($_SESSION['Omnes']['user_id'])){
-            echo '
+            if($_SESSION['Omnes']['type_account'] != "Admin")
+            {
+                echo '
             <script type="text/javascript">
             let d1 = document.getElementById("chat-container");
             d1.style.display = "inline";  
             </script>
             ';
+            }
         } else {
             echo '
             <script type="text/javascript">

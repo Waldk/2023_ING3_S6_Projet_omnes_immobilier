@@ -1,7 +1,8 @@
 <?php
 echo'
+<center>
 	<div class="ajout-bien" style="display : none;">
-	<h2>Formulaire d\'ajout de biens</h2>
+	<h2 align=center>Formulaire d\'ajout de biens</h2>
 	<div id="container">
 	<form enctype="multipart/form-data" action="scripts/script_ajout_bien.php" method="post" >
 		<table border="0">
@@ -66,5 +67,5 @@ echo'
 		</table>
 	</form>
 </div>
-</div>';
+</div></center>';
 ?>

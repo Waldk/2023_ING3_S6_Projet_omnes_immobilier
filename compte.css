@@ -1,17 +1,17 @@
-.user-info,.user-consultation, .user-rdv, .modif-info, .inscription-info, .ajout-bien {
+.user-info,.user-consultation, .user-rdv, .modif-info, .ajout-bien{
 	background-color: #f2f2f2;
 	border: 1px solid #ddd;
 	border-radius: 5px;
 	padding: 20px;
 	margin: 20px;
 }
-.user-info h2, .user-list h2 {
+.user-info h2, .user-list h2, .supp-bien h2 {
 margin-top: 0;
 }
-.user-info div, .user-list div {
+.user-info div, .user-list div, .supp-bien div {
 margin-bottom: 10px;
 }
-.user-list{
+.user-list, .supp-bien{
 	background-color: #e3e3e3;
 	border: 1px solid #ddd;
 	border-radius: 5px;
@@ -54,4 +54,22 @@ color: navy;
  	border-radius: 8px;
  	cursor: pointer;
  	width: 100%;
+}
+.bouton_admin{
+	padding: 10px 20px;
+	margin: 30px;
+	border: none;
+	background-color: #408dc0;
+	color: white;
+	font-size: 16px;
+	cursor: pointer;
+	border-radius: 20px;
+}
+.enveloppe{
+	background-color: #f2f2f2;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	padding: 20px;
+	margin: 20px;
+	width: 50%;
 }
