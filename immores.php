@@ -20,6 +20,9 @@
 
         <section class="slider">
             <div class="container">
+            <?php
+            include("scripts/affichage_immores.php");
+            ?><!--
                 <h2 class="titre">Les Immobiliers Résidentiels à vendre</h2>  
                 <br>
                 <div class="slide">
@@ -81,7 +84,7 @@
                         <h4>Localisation : Beaugrenelle</h4>
                         <h5>Prix : 467 000 €</h5>
                     </div>
-                </div>
+                </div>-->
             </div>
         </section>
 

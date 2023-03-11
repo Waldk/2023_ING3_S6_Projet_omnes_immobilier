@@ -20,6 +20,9 @@
 
         <section class="slider">
             <div class="container">
+            <?php
+            include("scripts/affichage_immocom.php");
+            ?><!--
                 <h2 class="titre">Les Immobiliers Commerciaux à vendre</h2>  
                 <br>
                 <div class="slide">
@@ -82,6 +85,7 @@
                         <h5>Prix : 657 000 €</h5>
                     </div>
                 </div>
+    -->
         </section>
 
 

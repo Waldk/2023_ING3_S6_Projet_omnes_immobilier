@@ -20,6 +20,9 @@
 
        <section class="slider">
             <div class="container">
+            <?php
+            include("scripts/affichage_immo.php");
+            ?><!--
                 <h2 class="titre">Les maisons à vendre</h2>  
                 <br>
                 <div class="slide">
@@ -263,6 +266,7 @@
                     </div>
                 </div>
             </div>
+-->
         </section>
 
         <?php

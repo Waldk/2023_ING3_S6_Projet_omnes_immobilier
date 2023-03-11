@@ -52,6 +52,9 @@
             <div class="moment">
                 <h1 class="affaire">LES AFFAIRES DU MOMENT !</h1>
                 <ul class="liste-carousel">
+                <?php
+                include("scripts/script_affichage_bien.php");
+                ?>
                     <li class="element-carousel">
                         <div class="card">
                             <h2 class="card-title">Appartement à louer</h2>
