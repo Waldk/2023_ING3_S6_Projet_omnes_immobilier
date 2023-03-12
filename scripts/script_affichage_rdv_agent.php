@@ -14,7 +14,7 @@ $id_rdv = "";
 $id_bien = "";
 
 $user = $_SESSION['Omnes']['user_id'];
-$sql = "SELECT Client,Date,Lieu,id_rdv FROM RDV JOIN Users ON Users.identifiant = RDV.Client WHERE Users.identifiant = \"$user\" and RDV.effectue=\"0\"";
+$sql = "SELECT Client,Date,Lieu,id_rdv FROM RDV JOIN Users ON Users.identifiant = RDV.Agent_immo WHERE Users.identifiant = \"$user\" and RDV.effectue=\"0\"";
 $resultat = mysqli_query($sessionsql, $sql);
 
 echo '
