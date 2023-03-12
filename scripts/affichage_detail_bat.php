@@ -77,22 +77,22 @@ while ($row = mysqli_fetch_assoc($resultat)) {
 
             <div class=\"row\">
             <div class=\"column\">
-                <img class=\"demo cursor\" src=\"data:image/jpg;base64," . base64_encode($photo[0]) . "\" style=\"width:100%\" onclick=\"currentSlide(1)\">
+                <img class=\"demo cursor\" src=\"data:image/jpg;base64," . base64_encode($photo[0]) . "\" style=\"height:103px\" onclick=\"currentSlide(1)\">
             </div>
             <div class=\"column\">
-                <img class=\"demo cursor\" src=\"data:image/jpg;base64," . base64_encode($photo[1]) . "\"style=\"width:100%\" onclick=\"currentSlide(2)\">
+                <img class=\"demo cursor\" src=\"data:image/jpg;base64," . base64_encode($photo[1]) . "\"style=\"height:103px\" onclick=\"currentSlide(2)\">
             </div>
             <div class=\"column\">
-                <img class=\"demo cursor\" src=\"data:image/jpg;base64," . base64_encode($photo[2]) . "\" style=\"width:100%\" onclick=\"currentSlide(3)\">
+                <img class=\"demo cursor\" src=\"data:image/jpg;base64," . base64_encode($photo[2]) . "\" style=\"height:103px\" onclick=\"currentSlide(3)\">
             </div>
             <div class=\"column\">
-                <img class=\"demo cursor\" src=\"data:image/jpg;base64," . base64_encode($photo[3]) . "\" style=\"width:100%\" onclick=\"currentSlide(4)\">
+                <img class=\"demo cursor\" src=\"data:image/jpg;base64," . base64_encode($photo[3]) . "\" style=\"height:103px\" onclick=\"currentSlide(4)\">
             </div>
             <div class=\"column\">
-                <img class=\"demo cursor\" src=\"data:image/jpg;base64," . base64_encode($photo[4]) . "\" style=\"width:100%\" onclick=\"currentSlide(5)\">
+                <img class=\"demo cursor\" src=\"data:image/jpg;base64," . base64_encode($photo[4]) . "\" style=\"height:103px\" onclick=\"currentSlide(5)\">
             </div>
             <div class=\"column\">
-                <img class=\"demo cursor\" src=\"data:image/jpg;base64," . base64_encode($photo[5]) . "\" style=\"width:100%\" onclick=\"currentSlide(6)\">
+                <img class=\"demo cursor\" src=\"data:image/jpg;base64," . base64_encode($photo[5]) . "\" style=\"height:103px\" onclick=\"currentSlide(6)\">
             </div>
             </div>";
 
