@@ -1,0 +1,29 @@
+table.calendrier,
+table.calendrier th,
+table.calendrier td {
+border: 1px solid #ddd;
+border-radius: 5px;
+background-color: white;
+padding: 20px;
+margin: 20px;
+border-collapse: collapse;
+}
+
+table.calendrier th {
+background-color: #408dc0;
+color: white;
+font-weight: bold;
+text-align: left;
+padding: 8px;
+border-bottom: none;
+}
+
+table.calendrier td.booked_user {
+background-color: #008CCE;
+color: white;
+}
+
+table.calendrier td {
+padding: 8px;
+border-bottom: 1px solid #ddd;
+}

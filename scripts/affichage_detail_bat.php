@@ -113,7 +113,7 @@ while ($row = mysqli_fetch_assoc($resultat)) {
             <div class=\"agent\">
                 <img style=\"float: left; width: 25%; padding-left:50px;\" class=\"image_info\" src=\"data:image/jpg;base64," . base64_encode($photo_agent) . "\" />
                 <h4 style=\"float: left; padding-left: 30px;\">
-                $nom_agent $prenom , $identifiant_agent<br>
+                $nom_agent $prenom<br>
                 Agent Immobilier agréé<br>
                 Téléphone : +33 $tel<br>
                 Email : <a href=\"mailto:info@omnes.immobilier.fr\">$mail

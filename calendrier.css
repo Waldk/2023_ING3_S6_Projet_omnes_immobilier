@@ -1,25 +1,40 @@
-table,th,td {
-    border: 1px solid black;
+table.calendrier,
+table.calendrier th,
+table.calendrier td {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
     border-collapse: collapse;
 }
 
-th,
-td {
-    padding: 10px;
+table.calendrier th {
+    background-color: #408dc0;
+    color: white;
+    font-weight: bold;
+    text-align: left;
+    padding: 8px;
+    border-bottom: none;
 }
 
-th {
-    background-color: lightgray;
+table.calendrier td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
 }
 
 td {
     cursor: pointer;
 }
 
-.booked {
+table.calendrier td.booked {
     background-color: black;
-}
+    color: white;
+    }
+    
 
-.booked_user {
+table.calendrier td.booked_user {
     background-color: #008CCE;
-}
+    color: white;
+    }
+    
