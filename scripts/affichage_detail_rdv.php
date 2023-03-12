@@ -13,15 +13,11 @@ $code_lieu = "";
 $id_rdv = "";
 $prix = "";
 $id_bien = "";
+$photo = "";
 
 $client = $_SESSION['Omnes']['user_id'];
 $sql = "SELECT Agent_immo,Date,Lieu,id_rdv FROM RDV JOIN Users ON Users.identifiant = RDV.Client WHERE Users.identifiant = \"$client\" and RDV.effectue=\"0\"";
 $resultat = mysqli_query($sessionsql, $sql);
-
-echo '
-<div class="user-rdv">
-
-    <h2>Rendez-vous à venir</h2>';
 
 while ($row = mysqli_fetch_assoc($resultat)) {
     $agent_immo = $row['Agent_immo'];
