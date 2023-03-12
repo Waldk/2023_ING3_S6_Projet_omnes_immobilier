@@ -1,0 +1,20 @@
+table.calendrier,
+table.calendrier th,
+table.calendrier td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+table.calendrier th,
+table.calendrier td {
+    padding: 10px;
+}
+
+table.calendrier th {
+    background-color: lightgray;
+}
+
+table.calendrier td.booked_user {
+    background-color: #008CCE;
+    cursor: pointer;
+}
