@@ -5,16 +5,23 @@ $password = '';
 $database = 'test_projet_1';
 $sessionsql = mysqli_connect($host, $user, $password, $database);
 $description = "";
-$description2 ="";
-$nom = "";
-$id_bien= "";
+$description2 = "";
+$nom_lieu = "";
+$nom_agent = "";
+$prenom = "";
+$tel = "";
+$mail = "";
+$id_bien = "";
 $photo[] = "";
+$agent[] = "";
+$identifiant_agent="";
 
-if(isset($_GET['id_bien'])) {
-   $id_bien=$_GET['id_bien']; 
+if (isset($_GET['id_bien'])) {
+    $id_bien = $_GET['id_bien'];
 }
 
-$sql = "SELECT Adresse1,Ville,Code_postal,prix,Nom,Photo,Description,Description2 FROM Biens WHERE id_bien = \"$id_bien\"";
+
+$sql = "SELECT Adresse1,Ville,Code_postal,prix,Nom,Photo,Description,Description2,Agent_immo,Agent_immo1,Agent_immo2,Agent_immo3,Agent_immo4  FROM Biens WHERE id_bien = \"$id_bien\"";
 $resultat = mysqli_query($sessionsql, $sql);
 
 while ($row = mysqli_fetch_assoc($resultat)) {
@@ -25,7 +32,12 @@ while ($row = mysqli_fetch_assoc($resultat)) {
     $description = $row['Description'];
     $description2 = $row['Description2'];
     $photo[0] = $row['Photo'];
-    $nom = $row['Nom'];
+    $nom_lieu = $row['Nom'];
+    $agent[0] = $row['Agent_immo'];
+    $agent[1] = $row['Agent_immo1'];
+    $agent[2] = $row['Agent_immo2'];
+    $agent[3] = $row['Agent_immo3'];
+    $agent[4] = $row['Agent_immo4'];
 
     $sql = "SELECT Photo1,Photo2,Photo3,Photo4,Photo5 FROM images WHERE id_bien = \"$id_bien\"";
     $resultat2 = mysqli_query($sessionsql, $sql);
@@ -36,7 +48,7 @@ while ($row = mysqli_fetch_assoc($resultat)) {
         $photo[4] = $row['Photo4'];
         $photo[5] = $row['Photo5'];
 
-        echo"
+        echo "
             <div class=\"container\">
 
             <div class=\"mySlides\">
@@ -82,20 +94,53 @@ while ($row = mysqli_fetch_assoc($resultat)) {
             <div class=\"column\">
                 <img class=\"demo cursor\" src=\"data:image/jpg;base64," . base64_encode($photo[5]) . "\" style=\"width:100%\" onclick=\"currentSlide(6)\">
             </div>
-            </div>
-            <div class=\"descr\">
+            </div>";
 
-            <h3 align=\"center\">Numéro d'identification : <strong>$id_bien</strong></h3>
-            <p><span STYLE=\"padding:0 0 0 40px;\">Description du bien : $nom</strong></p>
-            <p><span STYLE=\"padding:0 0 0 40px;\">Description : <strong>$description</strong></p>
-            <p><span STYLE=\"padding:0 0 0 40px;\">Spécifitcite : <strong>$description2</strong></p>
-            <p><span STYLE=\"padding:0 0 0 40px;\">Adresse : <strong>$adresse_lieu, $code_lieu $ville_lieu</strong></p>
-            <p><span STYLE=\"padding:0 0 0 40px;\">Prix : <strong>$prix €</strong></p>
+        $sql = "SELECT nom,prenom,telephone,mail,Photo,identifiant FROM users WHERE identifiant = \"$agent[0]\" or identifiant = \"$agent[1]\" or identifiant = \"$agent[2]\" or identifiant = \"$agent[3]\" or identifiant = \"$agent[4]\"";
+        $resultat3 = mysqli_query($sessionsql, $sql);
+
+
+        while ($row = mysqli_fetch_assoc($resultat3)) {
+            $nom_agent = $row['nom'];
+            $prenom = $row['prenom'];
+            $mail = $row['mail'];
+            $tel = $row['telephone'];
+            $photo_agent = $row['Photo'];
+            $identifiant_agent = $row['identifiant'];
+
+        echo "
+            <div class=\"descr\">
+            <div class=\"agent\">
+                <img style=\"float: left; width: 25%; padding-left:50px;\" class=\"image_info\" src=\"data:image/jpg;base64," . base64_encode($photo_agent) . "\" />
+                <h4 style=\"float: left; padding-left: 30px;\">
+                $nom_agent $prenom , $identifiant_agent<br>
+                Agent Immobilier agréé<br>
+                Téléphone : +33 $tel<br>
+                Email : $mail<br>
+                Spécialité : Appartements<br>
+                </h4>
+            </div>
+            <div>
+                <hr class=\"trait\">
+                <br><br>
+            </div>";
+
+            include("testcalendrier.php");
+
+            echo"<br>
+            <div>
+                <hr class=\"trait\">
+                <br>
+            </div>
+
             <div class=\"bouton_resa\">
-                <button class=\"bouton_footer\" class=\"btn\" id=\"reserver_btn\"><a href=\"reservation.php\">Réserver</a></button>
+                <button class=\"bouton_footer\" class=\"btn\" id=\"reserver_btn\"><a href=\"CV.php?identifiant_agent=". $identifiant_agent."\">Voir le CV</a></button>
             </div>
+            
             </div>
+
             ";
+        }
     }
 }
 ?>

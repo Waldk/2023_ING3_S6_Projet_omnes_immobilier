@@ -1,0 +1,20 @@
+#boxi{
+ width:400px;
+ margin:0 auto;
+ margin-top:10%;
+}
+.logo{
+    align-items: center;
+}
+#boite{
+    width: 100%;
+    min-width: 320px;
+    background-color: #ffffff;
+    z-index: 0;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-left:  auto;
+    border: 2px solid;
+    position: relative;
+    overflow: hidden;
+}
