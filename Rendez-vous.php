@@ -35,70 +35,22 @@
                 }
             }
             ?>
-            <!--<table id="consultation">
-                <tr>
-                    <th>Date/Heure</th>
-                    <th>Agent immobilier</th>
-                    <th>Biens</th>
-                    <th></th>
-                </tr>
-                <tbody>
-                    <tr>
-                        <td>09/04/2023 14:30</td>
-                        <td>Marco La</td>
-                        <td>34 quai de grenelle, 75015 Paris</td>
-                        <td colspan="2" align="center">
-                            <form method="post" action="scripts/delete_rdv.php">
-                                <input type="hidden" name="champ-caché" value="1">
-                                <input class="bouton_rdv" type="submit" name="submit" value="Annuler ce RDV">
-                            </form>
-                        </td>
-                    </tr>
+        </div>
 
-                    <div class="descr">
-                        <img src="image/semaine1">
-                        <br>
-                        <div>
-                            <h3 align="center">Terrain 312</h3>
-                            <h4 align="center">Localisation : Paris 15</h4>
-                            <h5 align="center">Prix : 370 000 €</h5>
-                        </div>
-                    </div>
-                </tbody>
-            </table>
+        <div class="user-rdv">
 
-            <table id="consultation">
-                <tr>
-                    <th>Date/Heure</th>
-                    <th>Agent immobilier</th>
-                    <th>Biens</th>
-                    <th></th>
-                </tr>
-                <tbody>
-                    <tr>
-                        <td>09/04/2023 14:30</td>
-                        <td>Marco La</td>
-                        <td>34 quai de grenelle, 75015 Paris</td>
-                        <td colspan="2" align="center">
-                            <form method="post" action="scripts/delete_rdv.php">
-                                <input type="hidden" name="champ-caché" value="1">
-                                <input class="bouton_rdv" type="submit" name="submit" value="Annuler ce RDV">
-                            </form>
-                        </td>
-                    </tr>
-
-                    <div class="descr">
-                        <img src="image/semaine1">
-                        <br>
-                        <div>
-                            <h3 align="center">Terrain 312</h3>
-                            <h4 align="center">Localisation : Paris 15</h4>
-                            <h5 align="center">Prix : 370 000 €</h5>
-                        </div>
-                    </div>
-                </tbody>
-            </table>-->
-
+            <h2 align="center">Rendez-vous passés</h2>
+            <?php
+            if (isset($_SESSION['Omnes']['type_account'])) {
+                if ($_SESSION['Omnes']['type_account'] == 'Client') {
+                    include("scripts/affichage_detail_rdv_passe.php");
+                } else if ($_SESSION['Omnes']['type_account'] == 'Agent immobilier') {
+                    include("scripts/affichage_detail_rdv_agent_passe.php");
+                } else {
+                    include("scripts/compte_inscription.php");
+                }
+            }
+            ?>
         </div>
 
 
