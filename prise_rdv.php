@@ -7,9 +7,9 @@ if ($mysqli->connect_error) {
     die("Erreur de connexion à la base de données: " . $mysqli->connect_error);
 }
 
-if (isset($_GET["date"]) && isset($_GET["nom_agent"]) && isset($_GET['nom_lieu'])) {
+if (isset($_GET["date"]) && isset($_GET["identifiant_agent"]) && isset($_GET['nom_lieu'])) {
     $date = $_GET["date"];
-    $nom_agent = $_GET["nom_agent"];
+    $identifiant_agent = $_GET["identifiant_agent"];
     $nom_lieu = $_GET['nom_lieu'];
     $id_bien = $_GET['id_bien'];
 
@@ -21,7 +21,7 @@ if (isset($_GET["date"]) && isset($_GET["nom_agent"]) && isset($_GET['nom_lieu']
     if ($result->num_rows > 0) {
         echo "Cette date est déjà prise.";
     } else {
-        $insert = "INSERT INTO rdv (date,client,agent_immo,lieu) VALUES ('" . $date . "', '" . $client . "', '" . $nom_agent . "', '" . $nom_lieu . "')";
+        $insert = "INSERT INTO rdv (date,client,agent_immo,lieu) VALUES ('" . $date . "', '" . $client . "', '" . $identifiant_agent . "', '" . $nom_lieu . "')";
         if ($mysqli->query($insert) === TRUE) {
             echo "La date a été ajoutée avec succès.";
             header('Location: Parcourir.php');

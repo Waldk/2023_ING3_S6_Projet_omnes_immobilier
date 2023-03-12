@@ -14,6 +14,7 @@ $mail = "";
 $id_bien = "";
 $photo[] = "";
 $agent[] = "";
+$identifiant_agent="";
 
 if (isset($_GET['id_bien'])) {
     $id_bien = $_GET['id_bien'];
@@ -95,7 +96,7 @@ while ($row = mysqli_fetch_assoc($resultat)) {
             </div>
             </div>";
 
-        $sql = "SELECT nom,prenom,telephone,mail,Photo FROM users WHERE identifiant = \"$agent[0]\" or identifiant = \"$agent[1]\" or identifiant = \"$agent[2]\" or identifiant = \"$agent[3]\" or identifiant = \"$agent[4]\"";
+        $sql = "SELECT nom,prenom,telephone,mail,Photo,identifiant FROM users WHERE identifiant = \"$agent[0]\" or identifiant = \"$agent[1]\" or identifiant = \"$agent[2]\" or identifiant = \"$agent[3]\" or identifiant = \"$agent[4]\"";
         $resultat3 = mysqli_query($sessionsql, $sql);
 
 
@@ -105,13 +106,14 @@ while ($row = mysqli_fetch_assoc($resultat)) {
             $mail = $row['mail'];
             $tel = $row['telephone'];
             $photo_agent = $row['Photo'];
+            $identifiant_agent = $row['identifiant'];
 
         echo "
             <div class=\"descr\">
             <div class=\"agent\">
                 <img style=\"float: left; width: 25%; padding-left:50px;\" class=\"image_info\" src=\"data:image/jpg;base64," . base64_encode($photo_agent) . "\" />
                 <h4 style=\"float: left; padding-left: 30px;\">
-                $nom_agent $prenom<br>
+                $nom_agent $prenom , $identifiant_agent<br>
                 Agent Immobilier agréé<br>
                 Téléphone : +33 $tel<br>
                 Email : $mail<br>
@@ -125,15 +127,16 @@ while ($row = mysqli_fetch_assoc($resultat)) {
 
             include("testcalendrier.php");
 
-            echo";
+            echo"<br>
             <div>
                 <hr class=\"trait\">
-                <br><br>
+                <br>
             </div>
 
             <div class=\"bouton_resa\">
-                <button class=\"bouton_footer\" class=\"btn\" id=\"reserver_btn\"><a href=\"CV.php\">Voir le CV</a></button>
+                <button class=\"bouton_footer\" class=\"btn\" id=\"reserver_btn\"><a href=\"CV.php?identifiant_agent=". $identifiant_agent."\">Voir le CV</a></button>
             </div>
+            
             </div>
 
             ";

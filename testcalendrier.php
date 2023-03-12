@@ -15,7 +15,7 @@
     }
 
     $booked_dates = array();
-    $result = $mysqli->query("SELECT date FROM rdv WHERE Agent_immo = '" . $nom_agent . "'");
+    $result = $mysqli->query("SELECT date FROM rdv WHERE Agent_immo = '" . $identifiant_agent . "'");
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             $booked_dates[] = $row["date"];
@@ -45,7 +45,8 @@
                      if (in_array($date, $booked_dates)){
                         echo "<td class=\"booked\"></td>";
                      } else {
-                        echo "<td><a href=\"prise_rdv.php?date=".$date."&nom_agent=". $nom_agent."&nom_lieu=". $nom_lieu."&id_bien=". $id_bien."\"></a></td>";                     }
+                        echo "<td><a href=\"prise_rdv.php?date=".$date."&identifiant_agent=". $identifiant_agent."&nom_lieu=". $nom_lieu."&id_bien=". $id_bien."\"></a></td>";
+                    }
                 } 
             echo"</tr>";
         }?>
