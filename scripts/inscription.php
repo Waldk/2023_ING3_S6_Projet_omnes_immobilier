@@ -18,56 +18,6 @@ $typecompte = isset($_POST["type_de_compte"]) ? $_POST["type_de_compte"] : "";
 $identifiant = isset($_POST["identifiant"]) ? $_POST["identifiant"] : "";
 $motdepasse = isset($_POST["mot_de_passe"]) ? $_POST["mot_de_passe"] : "";
 
-$erreur = "";
-
-if ($nom == "") {
-    $erreur .= "Le champ nom est vide. <br>";
-}
-if ($prenom == "") {
-    $erreur .= "Le champ prénom est vide. <br>";
-}
-if ($adresse1 == "") {
-    $erreur .= "Le champ adresse est vide. <br>";
-}
-if ($ville == "") {
-    $erreur .= "Le champ ville est vide. <br>";
-}
-if ($codepostal == "") {
-    $erreur .= "Le champ code postal est vide. <br>";
-}
-if ($pays == "") {
-    $erreur .= "Le champ pays est vide. <br>";
-}
-if ($telephone == "") {
-    $erreur .= "Le champ téléphone est vide. <br>";
-}
-if ($mail == "") {
-    $erreur .= "Le champ email est vide. <br>";
-}
-if ($cartepaiement == "") {
-    $erreur .= "Le champ carte de paiement est vide. <br>";
-}
-if ($nbcarte == "") {
-    $erreur .= "Le champ numéro de carte est vide. <br>";
-}
-if ($dateexpiration == "") {
-    $erreur .= "Le champ date d'expiration est vide. <br>";
-}
-if ($codesecurite == "") {
-    $erreur .= "Le champ code de sécurité est vide. <br>";
-}
-if ($typecompte == "") {
-    $erreur .= "Le champ type de compte est vide. <br>";
-}
-if ($identifiant == "") {
-    $erreur .= "Le champ identifiant est vide. <br>";
-}
-if ($motdepasse == "") {
-    $erreur .= "Le champ mot de passe est vide. <br>";
-}
-
-if ($erreur == "") {
-
     $host = 'localhost';
     $user = 'root';
     $password = '';
@@ -100,7 +50,5 @@ if ($erreur == "") {
     }
 
     mysqli_close($session);
-} else {
-    echo "Erreur : <br>" . $erreur;
-}
+
 ?>

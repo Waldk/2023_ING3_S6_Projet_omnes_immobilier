@@ -23,7 +23,7 @@ echo "
         <br>
     ";
     if (mysqli_num_rows($resultat) == 0) {
-        echo '<center><p>Aucun bien résidentiel disponible.</p>';
+        echo '<center><p>Aucun terrain disponible.</p>';
     }
 
     while ($row = mysqli_fetch_assoc($resultat)) {
