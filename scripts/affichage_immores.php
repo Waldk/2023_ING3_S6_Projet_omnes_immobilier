@@ -15,7 +15,7 @@ $database = 'test_projet_1';
 $sessionsql = mysqli_connect($host, $user, $password, $database);
 
 //nom
-$sql = "SELECT nom,Adresse1,Ville,Code_postal,prix,Photo,id_bien FROM biens WHERE type_bien = \"Appartement\" or type_bien = \"Maison\"";
+$sql = "SELECT nom,Adresse1,Ville,Code_postal,prix,Photo,id_bien FROM biens WHERE type_bien = \"Residence\"";
 $resultat = mysqli_query($sessionsql, $sql);
 
 echo "
