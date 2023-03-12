@@ -32,7 +32,7 @@
     }
     ?>
 
-    <table>
+    <table class="calendrier">
         <tr>
             <th>Heure</th>
             <th>Lundi</th>
