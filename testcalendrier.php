@@ -45,7 +45,7 @@
                 $booked_dates[] = $row["date"];
             }
         }
-        $booked_dates_user=$booked_dates;
+        $booked_dates_user = $booked_dates;
     }
 
     ?>
@@ -70,17 +70,19 @@
             for ($j = 0; $j < 7; $j++) {
                 $date = date("Y-m-d H:i:s", strtotime("next Monday") + ($j * 24 * 3600) + ($i * 3600));
                 if (in_array($date, $booked_dates_user)) {
-                    if (!isset($_SESSION['Omnes']['user_id'])){
+                    if (!isset($_SESSION['Omnes']['user_id'])) {
                         echo "<td class=\"booked\"></td>";
-                    }
-                    else {
+                    } else {
                         echo "<td class=\"booked_user\"></td>";
                     }
-                    
                 } else if (in_array($date, $booked_dates)) {
                     echo "<td class=\"booked\"></td>";
                 } else {
+                    if (!isset($_SESSION['Omnes']['user_id'])) {
+                        echo "<td style=\"color : white;\">rdvaaaaaaaaaaaaaaa</td>";
+                    } else {
                     echo "<td style=\"color : white;\"><a href=\"prise_rdv.php?date=" . $date . "&identifiant_agent=" . $identifiant_agent . "&nom_lieu=" . $nom_lieu . "&id_bien=" . $id_bien . "\">rdvaaaaaaaaaaaaaaa</a></td>";
+                    }
                 }
             }
             echo "</tr>";
