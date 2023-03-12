@@ -55,79 +55,10 @@
                 <?php
                 include("scripts/script_affichage_bien.php");
                 ?>
-                    <li class="element-carousel">
-                        <div class="card">
-                            <h2 class="card-title">Appartement à louer</h2>
-                            <img src="image/semaine1.png" />
-                            <div class="card-content">
-                                <p>C'est en plein centre de New York que se trouve ce petit bijou immobilier. Avec
-                                    une surface de 135m², 3 chambres, une cuisine entièrement fonctionnelle et
-                                    moderne. Prendre son déjeûner sur une terrasse avec vue sur Central Park, c'est
-                                    un rêve !</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="element-carousel">
-                        <div class="card">
-                            <h2 class="card-title">Terrain constructible</h2>
-                            <img src="image/semaine2.png" />
-                            <div class="card-content">
-                                <p>Terrain constructible situé en Bourgogne. Assez éloigné des cours d'eau, ce
-                                    terrain saura vous conquir par la pluralité de la faune et de la flore qui y
-                                    séjourne. C'est sur une surface de 2 hectares que vous pourriez installer votre
-                                    petit cocon familial.</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="element-carousel">
-                        <div class="card">
-                            <h2 class="card-title">Hôtel 5 étoiles</h2>
-                            <img src="image/semaine3.png" />
-                            <div class="card-content">
-                                <p>Qui n'a jamais rêvé de partir en vacances dans un hôtel luxieux. C'est ce que ce
-                                    magnifique hôtel pourra offrir à vos clients si vous possédiez ce batiment avec
-                                    plus de 150 chambres aux gammes différentes.</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="element-carousel">
-                        <div class="card">
-                            <h2 class="card-title">Station-service</h2>
-                            <img src="image/semaine4.png" />
-                            <div class="card-content">
-                                <p>Vous n'avez plus d'essence pour alimenter votre bolide 8 cylindres, si vous aviez
-                                    acquis cette statio essence, vous auriez pu vous fournir simplement, surtout dans le contexte
-                                    actuel. Ce bien est un réel investissement.</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="element-carousel">
-                        <div class="card">
-                            <h2 class="card-title">Bureau pour entreprise</h2>
-                            <img src="image/semaine5.png" />
-                            <div class="card-content">
-                                <p>Améliorer la productivité de vos employés, c'est le rêve de tout investisseur.
-                                    Pour cela, pensez à vous procurer de beaux locaux motivant pour mettre un accent
-                                    sur le dynamisme de vos équipes
-                                    .</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="element-carousel">
-                        <div class="card">
-                            <h2 class="card-title">Résidence copropriétaire</h2>
-                            <img src="image/semaine6.png" />
-                            <div class="card-content">
-                                <p>Cette résidence vous permettra de vivre dans une villa tout en vivant le plaisir
-                                    de la vie en communauté. Vous aurez accès à un deux pièces avec une surface de
-                                    80 m² ainsi qu'une piscine à partager avec les autres habitants.</p>
-                            </div>
-                        </div>
-                    </li>
+                
                 </ul>
             </div>
         </section>
-
         <?php
         include("scripts/footer.php");
         ?>
