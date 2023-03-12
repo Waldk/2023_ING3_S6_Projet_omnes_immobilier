@@ -14,7 +14,7 @@ echo'<footer>
             </a><br><br>
         </small>
 
-    <form class="info" action="mail.php" method="post">
+    <form class="info"  method="post">
         <p class="news">Newsletter</p>
         <input class="taille" type="e-mail" id="e-mail" name="e-mail">
         <button class="bouton_footer" type="submit">Envoyer</button>
