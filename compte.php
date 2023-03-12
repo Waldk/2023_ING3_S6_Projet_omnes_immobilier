@@ -32,6 +32,14 @@
                 $('.ajout-bien').css('display', 'none');
                 $('.user-list').css('display', 'none');
             });
+            function checkFiles() {
+                var input = document.querySelector('input[type=file]');
+                if (input.files.length != 6) {
+                    alert("Veuillez sélectionner exactement six images");
+                    return false;
+                }
+                return true;
+            }
         });
     </script>
 </head>
@@ -66,25 +74,24 @@
                 <h2>Chatbox</h2>
             </div>
             <div id="chatbox">
-             <?php
-             if(file_exists("log.html") && filesize("log.html") > 0){
-                 $contents = file_get_contents("log.html");
-                 echo $contents;
-             }
-             ?>
-         </div>
-         <form class="centre" name="message" action="">
-             <input name="usermsg" type="text" id="usermsg" />
-             <input name="submitmsg" type="submit" id="submitmsg" value="Envoyer" />
-         </form>
+                <?php
+                if (file_exists("log.html") && filesize("log.html") > 0) {
+                    $contents = file_get_contents("log.html");
+                    echo $contents;
+                }
+                ?>
+            </div>
+            <form class="centre" name="message" action="">
+                <input name="usermsg" type="text" id="usermsg" />
+                <input name="submitmsg" type="submit" id="submitmsg" value="Envoyer" />
+            </form>
         </div>
 
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <?php  
-        if (isset($_SESSION['Omnes']['user_id'])){
-            if($_SESSION['Omnes']['type_account'] != "Admin")
-            {
+        <?php
+        if (isset($_SESSION['Omnes']['user_id'])) {
+            if ($_SESSION['Omnes']['type_account'] != "Admin") {
                 echo '
             <script type="text/javascript">
             let d1 = document.getElementById("chat-container");
@@ -100,46 +107,47 @@
             </script>
             ';
         }
-    ?>
-     
-     
+        ?>
 
-    <script type="text/javascript">
-     // jQuery Document
-     $(document).ready(function () {
-         $("#submitmsg").click(function () {
-             var clientmsg = $("#usermsg").val();
-             $.post("post.php", { text: clientmsg });
-             $("#usermsg").val("");
-             return false;
-         });
 
-         function loadLog() {
-            var oldscrollHeight = $("#chatbox")[0].scrollHeight - 20; //Hauteur de défilement avant la requête
-             $.ajax({
-                 url: "log.html",
-                 cache: false,
-                 success: function (html) {
-                     $("#chatbox").html(html); //Insérez le log de chat dans la #chatbox div
-                     //Auto-scroll
-                     var newscrollHeight = $("#chatbox")[0].scrollHeight - 20; //Hauteur de défilement apres la requête
-                     if(newscrollHeight > oldscrollHeight){
-                         $("#chatbox").animate({ scrollTop: newscrollHeight }, 'normal'); //Défilement automatique
-                     }
-                 }
+
+        <script type="text/javascript">
+            // jQuery Document
+            $(document).ready(function () {
+                $("#submitmsg").click(function () {
+                    var clientmsg = $("#usermsg").val();
+                    $.post("post.php", { text: clientmsg });
+                    $("#usermsg").val("");
+                    return false;
+                });
+
+                function loadLog() {
+                    var oldscrollHeight = $("#chatbox")[0].scrollHeight - 20; //Hauteur de défilement avant la requête
+                    $.ajax({
+                        url: "log.html",
+                        cache: false,
+                        success: function (html) {
+                            $("#chatbox").html(html); //Insérez le log de chat dans la #chatbox div
+                            //Auto-scroll
+                            var newscrollHeight = $("#chatbox")[0].scrollHeight - 20; //Hauteur de défilement apres la requête
+                            if (newscrollHeight > oldscrollHeight) {
+                                $("#chatbox").animate({ scrollTop: newscrollHeight }, 'normal'); //Défilement automatique
+                            }
+                        }
+                    });
+                }
+                setInterval(loadLog, 2500);
+
             });
-    }
-    setInterval (loadLog, 2500);
-    
-    });
-    </script>
+        </script>
 
 
 
 
-<?php
-include("scripts/footer.php");
-?>
-</div>
+        <?php
+        include("scripts/footer.php");
+        ?>
+    </div>
 </body>
+
 </html>

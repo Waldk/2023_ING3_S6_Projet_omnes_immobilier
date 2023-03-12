@@ -4,7 +4,7 @@ echo'
 	<div class="ajout-bien" style="display : none;">
 	<h2 align=center>Formulaire d\'ajout de biens</h2>
 	<div id="container">
-	<form enctype="multipart/form-data" action="scripts/script_ajout_bien.php" method="post" >
+	<form onsubmit="return checkFiles();" enctype="multipart/form-data" action="scripts/script_ajout_bien.php" method="post" >
 		<table border="0">
 			<tr>
 				<td>Nom:</td>
@@ -55,7 +55,7 @@ echo'
 			</tr>
             <tr>
 				<td>Photo:</td>
-				<td><input type="file" name="photo"></td>
+				<td><input type="file" name="photo[]" multiple></td>
 			</tr>
             <tr>
 				<td>Agent Immobilier:</td>
