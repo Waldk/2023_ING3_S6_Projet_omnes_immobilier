@@ -12,15 +12,12 @@ $ville_lieu = "";
 $code_lieu = "";
 $id_rdv = "";
 $prix = "";
+$id_bien = "";
+$photo = "";
 
-$client = $_SESSION['Omnes']['user_id'];
-$sql = "SELECT Client,Date,Lieu,id_rdv FROM RDV JOIN Users ON Users.identifiant = RDV.Agent_immo WHERE Users.identifiant = \"$client\" and RDV.effectue=\"0\"";
+$user = $_SESSION['Omnes']['user_id'];
+$sql = "SELECT Client,Date,Lieu,id_rdv FROM RDV JOIN Users ON Users.identifiant = RDV.Agent_immo WHERE Users.identifiant = \"$user\" and RDV.effectue=\"0\"";
 $resultat = mysqli_query($sessionsql, $sql);
-
-echo '
-<div class="user-rdv">
-
-    <h2>Rendez-vous à venir</h2>';
 
 while ($row = mysqli_fetch_assoc($resultat)) {
     $client = $row['Client'];
@@ -35,7 +32,7 @@ while ($row = mysqli_fetch_assoc($resultat)) {
         $code_lieu =$row['Code_postal'];
         $prix =$row['prix'];
         $photo = $row['Photo'];
-        $id_bien = $row['id_bien'];
+        $id_bien =$row['id_bien'];
     }
 
     echo
@@ -64,7 +61,7 @@ while ($row = mysqli_fetch_assoc($resultat)) {
                     <img style=\"width :300%; height : 300%;\" src=\"data:image/jpg;base64," . base64_encode($photo) . "\" />
                         <br>
                         <div>
-                        <h3 align=\"center\"><a href=\"Detail_batiment.php?id_bien=$id_bien\">$lieu</a></h3>
+                            <h3 align=\"center\"><a href=\"Detail_batiment.php?id_bien=$id_bien\">$lieu</a></h3>
                             <h4 align=\"center\">Localisation : $adresse_lieu, $code_lieu $ville_lieu</h4>
                             <h5 align=\"center\">Prix : $prix €</h5>
                         </div>

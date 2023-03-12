@@ -4,7 +4,7 @@ $user = 'root';
 $password = '';
 $database = 'test_projet_1';
 $sessionsql = mysqli_connect($host, $user, $password, $database);
-$agent_immo = "";
+$client = "";
 $date = "";
 $lieu = "";
 $adresse_lieu = "";
@@ -12,8 +12,8 @@ $ville_lieu = "";
 $code_lieu = "";
 $id_rdv = "";
 
-$client = $_SESSION['Omnes']['user_id'];
-$sql = "SELECT Client,Date,Lieu,id_rdv FROM RDV JOIN Users ON Users.identifiant = RDV.Agent_immo WHERE Users.identifiant = \"$client\" and RDV.effectue=\"1\"";
+$user = $_SESSION['Omnes']['user_id'];
+$sql = "SELECT Client,Date,Lieu,id_rdv FROM RDV JOIN Users ON Users.identifiant = RDV.Agent_immo WHERE Users.identifiant = \"$user\" and RDV.effectue=\"1\"";
 $resultat = mysqli_query($sessionsql, $sql);
 
 echo '
