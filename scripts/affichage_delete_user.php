@@ -50,7 +50,7 @@ while ($row = mysqli_fetch_assoc($resultat)) {
                                 <input style=\"display:none;\" type=\"text\" name=\"nom\" value=\"$id_user\" required>
                             </td>
                             <td>
-                                <td colspan=\"2\" align=\"center\"><input type=\"submit\" name=\"submit\" value=\"valider\"></td>
+                                <td colspan=\"2\" align=\"center\"><input style=\"padding : 4px 8px;color: white;background-color: #008CCE;    border: none;border-radius: 8px;cursor: pointer;\" type=\"submit\" name=\"submit\" value=\"valider\"></td>
                             </td>
                     </table>
                 </form>
