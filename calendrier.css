@@ -19,3 +19,7 @@ td {
 .booked {
     background-color: black;
 }
+
+.booked_user {
+    background-color: #008CCE;
+}

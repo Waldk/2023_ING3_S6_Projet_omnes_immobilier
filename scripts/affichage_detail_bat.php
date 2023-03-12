@@ -135,6 +135,7 @@ while ($row = mysqli_fetch_assoc($resultat)) {
 
             <div class=\"bouton_resa\">
                 <button class=\"bouton_footer\" class=\"btn\" id=\"reserver_btn\"><a href=\"CV.php?identifiant_agent=". $identifiant_agent."\">Voir le CV</a></button>
+                <button class=\"bouton_footer\" class=\"btn\" id=\"reserver_btn\"><a href=\"Reservation.php?identifiant_agent=". $identifiant_agent."\">Réserver</a></button>
             </div>
             
             </div>
