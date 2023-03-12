@@ -42,7 +42,8 @@ if (isset($_GET["identifiant_agent"])) {
                                 <h1
                                     style=\"margin-left:40px; height: 100%;width: 40%;text-align:center;font-size: 30px;color: #000000;text-decoration: underline black;\">
                                     $prenom $nom</h1>
-                                <img style=\"border-radius: 20px;\" class=\"image_info\" src=\"data:image/jpg;base64," . base64_encode($photo) . "\" />
+                                    <div>
+                                <img style=\"border-radius: 20px;\" class=\"image_info\" src=\"data:image/jpg;base64," . base64_encode($photo) . "\" /></div>
                             </div>
                             <br><br><br><br><br><br><br><br><br>
                             <h4 style=\"text-align: center;font-size: 20px;color: #000000;\">Agent Immobilier agréé<br></h4>
