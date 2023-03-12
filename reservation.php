@@ -23,7 +23,7 @@
             <center>
                 <div class="boite">
                     <center>
-                        <form class="reserve">
+                        <form action="validation.php" class="reserve">
                             <table align="center">
                                 <h3 align="center">Réservation d'un bien</h3>
                                 <br>
