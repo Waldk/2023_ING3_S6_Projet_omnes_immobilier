@@ -14,6 +14,7 @@ if(isset($_GET['id_bien'])) {
    $id_bien=$_GET['id_bien']; 
 }
 
+
 $sql = "SELECT Adresse1,Ville,Code_postal,prix,Nom,Photo,Description,Description2 FROM Biens WHERE id_bien = \"$id_bien\"";
 $resultat = mysqli_query($sessionsql, $sql);
 
@@ -81,18 +82,6 @@ while ($row = mysqli_fetch_assoc($resultat)) {
             </div>
             <div class=\"column\">
                 <img class=\"demo cursor\" src=\"data:image/jpg;base64," . base64_encode($photo[5]) . "\" style=\"width:100%\" onclick=\"currentSlide(6)\">
-            </div>
-            </div>
-            <div class=\"descr\">
-
-            <h3 align=\"center\">Numéro d'identification : <strong>$id_bien</strong></h3>
-            <p><span STYLE=\"padding:0 0 0 40px;\">Description du bien : $nom</strong></p>
-            <p><span STYLE=\"padding:0 0 0 40px;\">Description : <strong>$description</strong></p>
-            <p><span STYLE=\"padding:0 0 0 40px;\">Spécifitcite : <strong>$description2</strong></p>
-            <p><span STYLE=\"padding:0 0 0 40px;\">Adresse : <strong>$adresse_lieu, $code_lieu $ville_lieu</strong></p>
-            <p><span STYLE=\"padding:0 0 0 40px;\">Prix : <strong>$prix €</strong></p>
-            <div class=\"bouton_resa\">
-                <button class=\"bouton_footer\" class=\"btn\" id=\"reserver_btn\"><a href=\"reservation.php\">Réserver</a></button>
             </div>
             </div>
             ";
