@@ -4,43 +4,43 @@ echo'
 <div class="inscription-info user-info" style="display : ;">
 <h2 align=center>Inscrivez-vous</h2>
 <div id="container">
-			<form action="inscription.php" method="post">
+			<form action="scripts/inscription.php" method="post">
 				<table border="0">
 					<tr>
 						<td>Nom:</td>
-						<td><input type="text" name="nom"></td>
+						<td><input type="text" name="nom" required></td>
 					</tr>
 		            <tr>
 						<td>Prenom:</td>
-						<td><input type="text" name="prenom"></td>
+						<td><input type="text" name="prenom" required></td>
 					</tr>
 					<tr>
 						<td>Adresse:</td>
-						<td><input type="text" name="Adresse_1"></td>
+						<td><input type="text" name="Adresse_1" required></td>
 					</tr>
 		            <tr>
 						<td>Complément d\'adresse:</td>
-						<td><input type="text" name="Adresse_2"></td>
+						<td><input type="text" name="Adresse_2" required></td>
 					</tr>
 					<tr>
 						<td>Ville:</td>
-						<td><input type="text" name="ville"></td>
+						<td><input type="text" name="ville" required></td>
 					</tr>
 					<tr>
 						<td>Code Postal:</td>
-						<td><input type="number" name="codepostal"></td>
+						<td><input type="number" name="codepostal" required></td>
 					</tr>
 					<tr>
 						<td>Pays:</td>
-						<td><input type="text" name="pays"></td>
+						<td><input type="text" name="pays" required></td>
 					</tr>
 		            <tr>
 						<td>Téléphone:</td>
-						<td><input type="tel" name="telephone"></td>
+						<td><input type="tel" name="telephone" required></td>
 					</tr>
 					<tr>
 						<td>E-mail:</td>
-						<td><input type="email" name="mail"></td>
+						<td><input type="email" name="mail" required></td>
 					</tr>
 					<tr>
 						<td>Carte de paiement:</td>
@@ -56,34 +56,36 @@ echo'
 					</tr>
 		            <tr>
 						<td>Numéro de carte:</td>
-						<td><input type="number" name="numero_carte"></td>
+						<td><input type="number" name="numero_carte" required></td>
 					</tr>
 		            <tr>
 						<td>Date d\'expiration:</td>
-						<td><input type="date" name="date_expiration"></td>
+						<td><input type="date" name="date_expiration" required></td>
 					</tr>
 		            <tr>
-						<td>code de sécurité:</td>
-						<td><input type="text" name="code_securite"></td>
+						<td>Code de sécurité:</td>
+						<td><input type="text" name="code_securite" required></td>
 					</tr>
 
 		            <tr>
 						<td>Type de compte:</td>
-						<td><input type="checkbox" name="type_de_compte" value="Client">
-							<label for = "magazine">Client</label><br>
-							<input type="checkbox" name="type_de_compte" value="Agent immobilier">
-							<label for = "magazine">Agents immobilier</label><br>
+						<td>
+							<select name="type_de_compte">
+								<option selected="selected">Sélectionner votre type de compte</option>
+								<option value="Client">Client</option>
+								<option value="Agent immobilier">Agents immobilier</option>
+							</select>
 						</td>
 					</tr>
 
 		            <tr>
 						<td>Identifiant:</td>
-						<td><input type="text" name="identifiant"></td>
+						<td><input type="text" name="identifiant" required></td>
 					</tr>
 
 		            <tr>
 						<td>Mot de passe:</td>
-						<td><input type="password" name="mot_de_passe"></td>
+						<td><input type="password" name="mot_de_passe" required></td>
 					</tr>
 
 					<tr>

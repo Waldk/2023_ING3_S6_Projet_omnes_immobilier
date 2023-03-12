@@ -82,8 +82,8 @@
 						<td>
 							<select name="type_de_compte">
 								<option selected="selected">Sélectionner votre type de compte</option>
-								<option value="MasterCard">Client</option>
-								<option value="Visa">Agents immobilier</option>
+								<option value="Client">Client</option>
+								<option value="Agent immobilier">Agent immobilier</option>
 							</select>
 						</td>
 					</tr>

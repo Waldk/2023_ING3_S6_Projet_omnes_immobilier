@@ -33,7 +33,28 @@ while ($row = mysqli_fetch_assoc($resultat)) {
     echo
         "<div class=\"user-info\">
             <h2 align=center>Informations personnelles</h2>
-            <div class=\"user-name\">Type de compte : $compte</div>
+            <div class=\"user-name\">
+                Type de compte : $compte
+                <form action=\"scripts/modif_type_compte.php\"  method=\"post\">
+                    <table border=\"0\">
+                            <td>Modifier le type de compte:</td>
+                            <td>
+                                <select name=\"type_de_compte\">
+                                    <option selected=\"selected\">Type</option>
+                                    <option value=\"Client\">Client</option>
+                                    <option value=\"Agent immobilier\">Agent immobilier</option>
+                                    <option value=\"Admin\">Admin</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input style=\"display:none;\" type=\"text\" name=\"nom\" value=\"$id_user\" required>
+                            </td>
+                            <td>
+                                <td colspan=\"2\" align=\"center\"><input type=\"submit\" name=\"submit\" value=\"valider\"></td>
+                            </td>
+                    </table>
+                </form>
+            </div>
             <div class=\"user-name\">Nom et prénom : $prenom $nom</div>
             <div class=\"user-address\">Adresse : $adresse, $code $ville</div>
             <div class=\"user-phone\">Téléphone : $tel</div>

@@ -116,7 +116,8 @@ while ($row = mysqli_fetch_assoc($resultat)) {
                 $nom_agent $prenom , $identifiant_agent<br>
                 Agent Immobilier agréé<br>
                 Téléphone : +33 $tel<br>
-                Email : $mail<br>
+                Email : <a href=\"mailto:info@omnes.immobilier.fr\">$mail
+            </a><br>
                 Spécialité : Appartements<br>
                 </h4>
             </div>
