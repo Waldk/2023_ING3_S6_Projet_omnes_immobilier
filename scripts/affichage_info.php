@@ -28,9 +28,9 @@ while ($row = mysqli_fetch_assoc($resultat)) {
     echo
         "<div class=\"user-info\">
         <h2>Informations personnelles</h2>
-        <div class=\"user-name\">Nom et prénom : $prenom $nom</div>
+        <div class=\"user-name\">Nom et prénom : $nom  $prenom</div>
         <div class=\"user-address\">Adresse : $adresse, $code $ville</div>
-        <div class=\"user-phone\">Téléphone : $tel</div>
+        <div class=\"user-phone\">Téléphone : 0$tel</div>
         <div class=\"user-email\">E-mail : $mail</div>
         <div class=\"user-bank\">trouver un moyen de cacher une information bancaire</div>
         <button class=\"bouton_footer\" id=\"button_modif\">Cliquez pour mettre à jour les informations</button>
