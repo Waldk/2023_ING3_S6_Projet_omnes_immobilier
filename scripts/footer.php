@@ -1,5 +1,21 @@
 <?php
-echo'<footer>
+echo'<div class="pub">
+  <img src="image/pub_sg.png">
+  <img src="image/pub_axa.png">
+    </div>
+
+    <script type="text/javascript">
+        const images = document.querySelectorAll(\'.pub img\');
+        let cmpImage = 0;
+        images[cmpImage].classList.add(\'active\');
+
+        setInterval(() => {
+          images[cmpImage].classList.remove(\'active\');
+          cmpImage = (cmpImage + 1) % images.length;
+          images[cmpImage].classList.add(\'active\');
+        }, 5000);
+    </script>
+<footer>
 <div class="footer1">
     <p class="barre">Service client</p>
     <p>

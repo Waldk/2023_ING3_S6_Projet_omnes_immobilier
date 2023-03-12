@@ -476,3 +476,23 @@ table {
 .bouton12-change-color-clique {
   background-color: red;
 }
+
+.pub {
+  width: 100%;
+  height: 60px;
+  overflow: hidden;
+  position: relative;
+}
+
+.pub img {
+  width: 100%;
+  height: 60px;
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.pub img.active {
+  opacity: 1;
+}
