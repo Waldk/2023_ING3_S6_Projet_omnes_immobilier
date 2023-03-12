@@ -56,7 +56,7 @@
                      } else if (in_array($date, $booked_dates)){
                         echo "<td class=\"booked\"></td>";
                      } else {
-                        echo "<td style=\"color : #f5f4f2;\"><a href=\"prise_rdv.php?date=".$date."&identifiant_agent=". $identifiant_agent."&nom_lieu=". $nom_lieu."&id_bien=". $id_bien."\">rdv</a></td>";
+                        echo "<td style=\"color : white;\"><a href=\"prise_rdv.php?date=".$date."&identifiant_agent=". $identifiant_agent."&nom_lieu=". $nom_lieu."&id_bien=". $id_bien."\">rdvaaaaaaaaaaaaaaa</a></td>";
                     }
                 } 
             echo"</tr>";
