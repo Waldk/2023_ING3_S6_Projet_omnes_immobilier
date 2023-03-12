@@ -23,23 +23,29 @@
     <?php
     include("scripts/affichage_detail_bat.php");
     ?>
-    <div class="descr">
 
-        <div class="agent">
-          <img style="float: left; width: 25%; padding-left:50px;" class="image_info" src="image/photo_Téo">
-          <h4 style="float: left; padding-left: 30px;">
-            Téo Penneçot<br>
-            Agent Immobilier agréé<br>
-            Téléphone : +33 7 81 44 42 57<br>
-            Email : teo.pennecot@edu.ece.fr<br>
-            Spécialité : Appartements<br>
-            </h4>
-        </div>
 
-          <div>
-              <hr class="trait">
-              <br><br>
-          </div>
+
+    <!--<div class="descr">
+
+      <div class="agent">
+        <img style="float: left; width: 25%; padding-left:50px;" class="image_info" src="image/photo_Téo">
+        <h4 style="float: left; padding-left: 30px;">
+          Téo Penneçot<br>
+          Agent Immobilier agréé<br>
+          Téléphone : +33 7 81 44 42 57<br>
+          Email : teo.pennecot@edu.ece.fr<br>
+          Spécialité : Appartements<br>
+        </h4>
+      </div>
+      <div>
+        <hr class="trait">
+        <br><br>
+      </div>
+      <?php
+        include("testcalendrier.php");
+      ?>
+          
 
         <table align="center">
           <thead>
@@ -113,19 +119,19 @@
           </tbody>
         </table>
 
-        <div>
-            <hr class="trait">
-            <br><br>
-        </div>
-
-
-        <div class="bouton_resa">
-            <button class="bouton_footer" class="btn" id="reserver_btn"><a href="CV.php">Voir le CV</a></button>
-        </div>  
+      <div>
+        <hr class="trait">
+        <br><br>
       </div>
 
-  <script type="text/javascript">
-      
+
+      <div class="bouton_resa">
+        <button class="bouton_footer" class="btn" id="reserver_btn"><a href="CV.php">Voir le CV</a></button>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+
       function changeColor1() {
         var bouton1 = document.getElementById("bouton1-change-color");
         bouton1.classList.add("bouton1-change-color-clique");
@@ -154,12 +160,12 @@
         alert("Votre rendez-vous a bien été pris !");
       }
 
-       function changeColor6() {
+      function changeColor6() {
         var bouton6 = document.getElementById("bouton6-change-color");
         bouton6.classList.add("bouton6-change-color-clique");
         alert("Votre rendez-vous a bien été pris !");
       }
-      
+
       function changeColor7() {
         var bouton8 = document.getElementById("bouton8-change-color");
         bouton8.classList.add("bouton8-change-color-clique");
@@ -191,49 +197,49 @@
         bouton7.classList.add("bouton7-change-color-clique");
         alert("Votre rendez-vous a bien été pris !");
       }
-  </script>
-  
-  
-  <script>
-    let slideIndex = 1;
-    showSlides(slideIndex);
+    </script>-->
 
-    function plusSlides(n) {
-      showSlides(slideIndex += n);
-    }
 
-    function currentSlide(n) {
-      showSlides(slideIndex = n);
-    }
+    <script>
+      let slideIndex = 1;
+      showSlides(slideIndex);
 
-    function showSlides(n) {
-      let i;
-      let slides = document.getElementsByClassName("mySlides");
-      let dots = document.getElementsByClassName("demo");
-      let captionText = document.getElementById("caption");
-      if (n > slides.length) {
-        slideIndex = 1
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
       }
-      if (n < 1) {
-        slideIndex = slides.length
+
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
       }
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("demo");
+        let captionText = document.getElementById("caption");
+        if (n > slides.length) {
+          slideIndex = 1
+        }
+        if (n < 1) {
+          slideIndex = slides.length
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        captionText.innerHTML = dots[slideIndex - 1].alt;
       }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex - 1].style.display = "block";
-      dots[slideIndex - 1].className += " active";
-      captionText.innerHTML = dots[slideIndex - 1].alt;
-    }
-  </script>
+    </script>
 
 
 
-  <?php
-  include("scripts/footer.php");
-  ?>
+    <?php
+    include("scripts/footer.php");
+    ?>
   </div>
 </body>
 
