@@ -16,7 +16,7 @@ $description_cv = "";
 
 if (isset($_GET["identifiant_agent"])) {
     $identifiant_agent = $_GET["identifiant_agent"];
-    $sql = "SELECT nom,prenom,telephone,mail,Adresse_1,Ville,Code_postal,specialite,description_cv,Photo FROM users WHERE nom = \"$identifiant_agent\"";
+    $sql = "SELECT nom,prenom,telephone,mail,Adresse_1,Ville,Code_postal,specialite,description_cv,Photo FROM users WHERE identifiant = \"$identifiant_agent\"";
     $resultat = mysqli_query($sessionsql, $sql);
 
 
