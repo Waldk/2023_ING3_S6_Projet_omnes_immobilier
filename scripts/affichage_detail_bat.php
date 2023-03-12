@@ -20,7 +20,7 @@ if (isset($_GET['id_bien'])) {
 }
 
 
-$sql = "SELECT Adresse1,Ville,Code_postal,prix,Nom,Photo,Description,Description2,Agent_immo FROM Biens WHERE id_bien = \"$id_bien\"";
+$sql = "SELECT Adresse1,Ville,Code_postal,prix,Nom,Photo,Description,Description2,Agent_immo,Agent_immo1,Agent_immo2,Agent_immo3,Agent_immo4  FROM Biens WHERE id_bien = \"$id_bien\"";
 $resultat = mysqli_query($sessionsql, $sql);
 
 while ($row = mysqli_fetch_assoc($resultat)) {
@@ -33,6 +33,10 @@ while ($row = mysqli_fetch_assoc($resultat)) {
     $photo[0] = $row['Photo'];
     $nom_lieu = $row['Nom'];
     $agent[0] = $row['Agent_immo'];
+    $agent[1] = $row['Agent_immo1'];
+    $agent[2] = $row['Agent_immo2'];
+    $agent[3] = $row['Agent_immo3'];
+    $agent[4] = $row['Agent_immo4'];
 
     $sql = "SELECT Photo1,Photo2,Photo3,Photo4,Photo5 FROM images WHERE id_bien = \"$id_bien\"";
     $resultat2 = mysqli_query($sessionsql, $sql);
@@ -91,7 +95,7 @@ while ($row = mysqli_fetch_assoc($resultat)) {
             </div>
             </div>";
 
-        $sql = "SELECT nom,prenom,telephone,mail FROM users WHERE identifiant = \"$agent[0]\"";
+        $sql = "SELECT nom,prenom,telephone,mail,Photo FROM users WHERE identifiant = \"$agent[0]\" or identifiant = \"$agent[1]\" or identifiant = \"$agent[2]\" or identifiant = \"$agent[3]\" or identifiant = \"$agent[4]\"";
         $resultat3 = mysqli_query($sessionsql, $sql);
 
 
@@ -100,11 +104,12 @@ while ($row = mysqli_fetch_assoc($resultat)) {
             $prenom = $row['prenom'];
             $mail = $row['mail'];
             $tel = $row['telephone'];
+            $photo_agent = $row['Photo'];
 
         echo "
             <div class=\"descr\">
             <div class=\"agent\">
-                <img style=\"float: left; width: 25%; padding-left:50px;\" class=\"image_info\" src=\"image/photo_Téo\">
+                <img style=\"float: left; width: 25%; padding-left:50px;\" class=\"image_info\" src=\"data:image/jpg;base64," . base64_encode($photo_agent) . "\" />
                 <h4 style=\"float: left; padding-left: 30px;\">
                 $nom_agent $prenom<br>
                 Agent Immobilier agréé<br>

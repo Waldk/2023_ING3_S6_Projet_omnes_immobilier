@@ -37,10 +37,9 @@
 
         <?php for ($i = 0; $i < 24; $i++){
             echo "<tr>
-                <td>
-                    <?php echo sprintf(\"%02d\", $i) ?>h-
-                    <?php echo sprintf(\"%02d\", $i + 1) ?>h
-                </td>";
+                <td>";
+                echo sprintf("%02d", $i) . "h-" . sprintf("%02d", $i + 1) . "h";
+                echo "</td>";
                 for ($j = 0; $j < 7; $j++){
                      $date = date("Y-m-d H:i:s", strtotime("next Monday") + ($j * 24 * 3600) + ($i * 3600));
                      if (in_array($date, $booked_dates)){
